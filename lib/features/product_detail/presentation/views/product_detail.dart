@@ -85,7 +85,7 @@ class ProductDetail extends StatelessWidget {
         const Icon(Icons.star, size: 22.0, color: Colors.amber),
         const SizedBox(width: 4.0),
         Text(
-          product.rating,
+          product.rating.toString(),
           style: Theme.of(Get.context!).textTheme.bodyMedium!.copyWith(color: Colors.black54),
         ),
         const SizedBox(width: 18.0),

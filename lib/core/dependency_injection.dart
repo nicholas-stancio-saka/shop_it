@@ -16,6 +16,11 @@ import 'package:shop_it/features/home/data/datasources/home_local_data_source.da
 import 'package:shop_it/features/home/data/datasources/home_remote_data_source.dart';
 import 'package:shop_it/features/home/domain/usecases/logout.dart';
 import 'package:shop_it/features/home/presentation/controllers/home_controller.dart';
+import 'package:shop_it/features/product_list/data/datasources/product_list_remote_data_source.dart';
+import 'package:shop_it/features/product_list/data/repositories/product_list_repository_impl.dart';
+import 'package:shop_it/features/product_list/domain/repositories/product_list_repository_impl.dart';
+import 'package:shop_it/features/product_list/domain/usecases/category.dart';
+import 'package:shop_it/features/product_list/domain/usecases/product.dart';
 import 'package:shop_it/features/product_list/presentation/controllers/product_list_controller.dart';
 
 enum DioTokenType { noToken, token }
@@ -53,7 +58,13 @@ void initializeAfterAuthDependencies(String token) {
   Get.lazyPut<HomeLocalDataSource>(() => HomeLocalDataSource(Get.find()), fenix: true);
   Get.lazyPut(() => LogoutUser(Get.find(), Get.find()), fenix: true);
 
+  // Product List feature dependencies
+  Get.lazyPut<ProductListRemoteDataSource>(() => ProductListRemoteDataSource(dioToken), fenix: true);
+  Get.lazyPut<ProductListRepository>(() => ProductListRepositoryImpl(Get.find()), fenix: true);
+  Get.lazyPut(() => CategoryUseCase(Get.find()), fenix: true);
+  Get.lazyPut(() => ProductUseCase(Get.find()), fenix: true);
+
   // Controllers
   Get.lazyPut<HomeController>(() => HomeController(Get.find()), fenix: true);
-  Get.lazyPut<ProductListController>(() => ProductListController(), fenix: true);
+  Get.lazyPut<ProductListController>(() => ProductListController(Get.find(), Get.find()), fenix: true);
 }

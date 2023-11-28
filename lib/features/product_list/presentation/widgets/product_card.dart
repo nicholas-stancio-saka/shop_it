@@ -128,7 +128,7 @@ class ProductCard extends StatelessWidget {
         const Icon(Icons.star, size: 16.0, color: Colors.amber),
         const SizedBox(width: 4.0),
         Text(
-          product.rating,
+          product.rating.toString(),
           style: Theme.of(Get.context!).textTheme.bodySmall,
         ),
         const SizedBox(width: 4.0),

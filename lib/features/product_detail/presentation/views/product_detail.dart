@@ -38,7 +38,10 @@ class ProductDetail extends StatelessWidget {
   }
 
   Widget _buildImage() {
-    return Image.network(product.imageUrl);
+    return Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: Image.network(product.imageUrl),
+    );
   }
 
   Widget _buildContent() {

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_it/core/config/config.dart';
@@ -8,7 +9,6 @@ import 'package:shop_it/core/error/error_model.dart';
 import 'package:shop_it/core/services/utils/global_loader.dart';
 import 'package:shop_it/core/services/utils/logging.dart';
 import 'package:shop_it/features/shared/widgets/dialog.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
 
 class AppErrorUtility {
   static Future<void> defaultErrorDialog(ErrorModel errorModel) async {
@@ -57,22 +57,24 @@ class AppErrorUtility {
       // Profile
       FlutterError.dumpErrorToConsole(FlutterErrorDetails(exception: errorModel.error, stack: errorModel.stackTrace));
 
-      await _sendToSentry(errorModel);
+      await _sendToCrashlytics(errorModel);
     } else {
       // Release
-      await _sendToSentry(errorModel);
+      await _sendToCrashlytics(errorModel);
     }
   }
 
-  static Future<void> _sendToSentry(ErrorModel errorModel) async {
+  static Future<void> _sendToCrashlytics(ErrorModel errorModel) async {
     try {
-      await Sentry.captureException(
+      FirebaseCrashlytics.instance.recordError(
         errorModel.error,
-        stackTrace: errorModel.stackTrace,
-        hint: Hint.withMap(errorModel.toJson()),
+        errorModel.stackTrace,
+        fatal: errorModel.isFatal,
+        information: [ErrorModel],
+        reason: (errorModel.debugTitle ?? '') + (errorModel.debugText ?? ''),
       );
     } catch (e) {
-      AppLogging.simpleLog('Sentry Error: $e');
+      AppLogging.simpleLog('Crashlytics Error: $e');
     }
   }
 }

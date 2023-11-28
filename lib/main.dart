@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,6 @@ import 'package:shop_it/core/services/storage/local_storage_service.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:shop_it/router.dart';
 import 'package:shop_it/core/theme.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
 
 Future<void> main() async {
   // creates a zone
@@ -80,25 +80,9 @@ Future<void> initializeServices() async {
 /// Sentry Console: https://508598dbec2a.sentry.io/issues/?referrer=sidebar
 Future<void> initErrorManagement() async {
   if (AppConfig.appType != AppType.debug) {
-    await SentryFlutter.init(
-      (options) {
-        options.dsn = 'https://7d24f988656186c99424bacfb929df05@o4506235027259392.ingest.sentry.io/4506235028439040'; // TODO: Secret
-      },
-    );
+    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 
-    FlutterError.onError = (FlutterErrorDetails details) {
-      // Handle Flutter framework errors
-      AppErrorUtility.logError(
-        ErrorModel(
-          type: ErrorType.flutter,
-          error: details.exception,
-          stackTrace: details.stack,
-        ),
-      );
-
-      //! Note: Dont send dialogs here
-    };
-
+    // TODO: May need to adjust this
     ErrorWidget.builder = (FlutterErrorDetails details) {
       // Handle widget rendering errors
       AppErrorUtility.logError(

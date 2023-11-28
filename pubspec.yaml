@@ -37,7 +37,7 @@ dependencies:
   cloud_firestore: ^4.3.1
 
   # Error Logging
-  sentry_flutter: ^7.13.1
+  firebase_crashlytics: ^3.4.5
 
   # UI Related
   syncfusion_flutter_core: ^23.1.44
@@ -47,6 +47,7 @@ dependencies:
   shimmer: ^3.0.0
   toastification: ^1.1.0
   flutter_easyloading: ^3.0.5
+  
 
 dev_dependencies:
   flutter_test:

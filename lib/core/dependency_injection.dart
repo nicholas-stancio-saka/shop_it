@@ -12,6 +12,7 @@ import 'package:shop_it/features/auth/domain/usecases/login_user.dart';
 import 'package:shop_it/features/auth/domain/usecases/register_user.dart';
 import 'package:shop_it/features/auth/domain/usecases/reset_password.dart';
 import 'package:shop_it/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:shop_it/features/home/data/datasources/home_local_data_source.dart';
 import 'package:shop_it/features/home/data/datasources/home_remote_data_source.dart';
 import 'package:shop_it/features/home/domain/usecases/logout.dart';
 import 'package:shop_it/features/home/presentation/controllers/home_controller.dart';
@@ -49,7 +50,8 @@ void initializeAfterAuthDependencies(String token) {
 
   // Home feature dependencies
   Get.lazyPut<HomeRemoteDataSource>(() => HomeRemoteDataSource(dioToken), fenix: true);
-  Get.lazyPut(() => LogoutUser(Get.find()), fenix: true);
+  Get.lazyPut<HomeLocalDataSource>(() => HomeLocalDataSource(Get.find()), fenix: true);
+  Get.lazyPut(() => LogoutUser(Get.find(), Get.find()), fenix: true);
 
   // Controllers
   Get.lazyPut<HomeController>(() => HomeController(Get.find()), fenix: true);

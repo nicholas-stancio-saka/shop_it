@@ -10,6 +10,7 @@ Expected End Date: 1 Dec 2023 (3 days)
 - Few images and icons may appear different from the design since the design is in pdf, not in Figma
 - If there are an unknown error, there might be a problem with the api (https://fakestoreapi.com/).
     - Known issue occurance: 29 Nov 16.00 - 21.30
+- User can logout (locally) by pressing the profile icon in the home screen.
 
 ## Additional features:
 Firebase Crashlytics --> Error handling on productions

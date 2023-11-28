@@ -119,9 +119,10 @@ class AuthWidgets {
       child: Center(
         child: AppButton(
           onTap: () {
-            authController.emailController.text = 'tes@gmail.com';
-            authController.passwordController.text = '123456';
-            authController.rePasswordController.text = '123456';
+            // https://fakestoreapi.com/docs
+            authController.emailController.text = 'mor_2314';
+            authController.passwordController.text = '83r5^_';
+            authController.rePasswordController.text = '83r5^_';
           },
           child: const Text('Auto Fill'),
         ),

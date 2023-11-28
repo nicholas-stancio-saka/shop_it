@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:shop_it/features/home/presentation/controllers/home_controller.dart';
 
 class HomeTopBar extends StatelessWidget {
-  const HomeTopBar({super.key});
+  final HomeController homeController;
+
+  const HomeTopBar(this.homeController, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +13,10 @@ class HomeTopBar extends StatelessWidget {
         Container(
           width: 20,
         ),
-        _iconBox(child: const Icon(Icons.person_outlined)),
+        _iconBox(
+          onTap: () => homeController.logout(),
+          child: const Icon(Icons.person_outlined),
+        ),
         Container(
           width: 10,
         ),
@@ -33,11 +39,14 @@ class HomeTopBar extends StatelessWidget {
     );
   }
 
-  Widget _iconBox({Widget? child}) {
-    return SizedBox(
-      width: 22,
-      height: 22,
-      child: child,
+  Widget _iconBox({Widget? child, void Function()? onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: 22,
+        height: 22,
+        child: child,
+      ),
     );
   }
 }

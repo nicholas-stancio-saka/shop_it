@@ -28,6 +28,10 @@ class LocalStorageService {
   Future<void> remove(String key) async {
     await _box.remove(key);
   }
+
+  Future<void> purge() async {
+    await _box.erase();
+  }
 }
 
 class StorageKeys {

@@ -8,8 +8,6 @@ class HomeController extends GetxController {
   // Constructor
   HomeController(LogoutUser logoutUser) : _logoutUseCase = logoutUser;
 
-  final tabIndex = 0.obs;
-
   // ----- Page Navigation -----
   logout() async {
     AppGlobalLoader.showLoading();

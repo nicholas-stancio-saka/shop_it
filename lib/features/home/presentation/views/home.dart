@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     return AppPage(
       body: Column(
         children: [
-          const HomeTopBar(),
+          HomeTopBar(homeController),
           Expanded(
             child: ProductListScreen(),
           ),

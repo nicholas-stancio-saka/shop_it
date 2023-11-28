@@ -12,4 +12,14 @@ extension AuthApi on AppApi {
 
     return response.data;
   }
+
+  // TODO: IMPLEMENT THIS
+  Future<void> resetEmailPassword(String email) async {
+    // await AppFirebaseAuth().resetEmailPassword(email);
+  }
+
+  // Remove all storage
+  Future<void> logout() async {
+    await AppFirebaseAuth().signOut();
+  }
 }

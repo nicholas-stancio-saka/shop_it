@@ -57,7 +57,7 @@ class InitController extends GetxController {
 
       // ----- // ----- // -----
       /// On Android, throw to login instead. Let Login Feature handle
-      Get.toNamed('/login');
+      Get.toNamed('/auth');
     }
 
     AppGlobalLoader.hideLoading();
@@ -76,11 +76,11 @@ class InitController extends GetxController {
 
         Get.toNamed('/home'); // Navigate to the home screen if valid
       } else {
-        Get.toNamed('/login'); // Navigate to the login screen if not valid
+        Get.toNamed('/auth'); // Navigate to the login screen if not valid
       }
     } catch (e, st) {
       // Navigate to the login screen if an error occured
-      Get.toNamed('/login');
+      Get.toNamed('/auth');
 
       AppErrorUtility.logError(
         ErrorModel(

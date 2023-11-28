@@ -1,5 +1,5 @@
 import 'package:shop_it/core/initialization/views/init_screen.dart';
-import 'package:shop_it/features/auth/presentation/views/login.dart';
+import 'package:shop_it/features/auth/presentation/views/_auth.dart';
 import 'package:shop_it/features/home/presentation/views/home.dart';
 import 'package:get/get.dart';
 
@@ -13,8 +13,8 @@ class AppRouter {
         transition: Transition.noTransition, // No animation
       ),
       GetPage(
-        name: '/login',
-        page: () => LoginScreen(),
+        name: '/auth',
+        page: () => AuthScreen(),
         transition: Transition.noTransition, // No animation
       ),
       GetPage(

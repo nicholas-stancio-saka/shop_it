@@ -49,7 +49,7 @@ class GlobalErrorPage extends StatelessWidget {
         message: 'An error occured. Please relogin',
         buttonText: 'Back to login',
         callback: () {
-          Get.offAllNamed('/login');
+          Get.offAllNamed('/auth');
         },
       ),
     );

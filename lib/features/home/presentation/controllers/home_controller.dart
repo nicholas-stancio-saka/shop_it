@@ -21,6 +21,6 @@ class HomeController extends GetxController {
     }
 
     AppGlobalLoader.hideLoading();
-    Get.offAllNamed('/login');
+    Get.offAllNamed('/auth');
   }
 }

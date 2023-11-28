@@ -13,16 +13,23 @@ class ProductDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPage(
+      title: '',
+      actions: const [
+        // TODO: To Cart
+      ],
       body: Stack(
         children: [
-          ListView(
-            children: [
-              _buildImage(),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: _buildContent(),
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(bottom: 80.0), // Add Padding for button
+            child: ListView(
+              children: [
+                _buildImage(),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: _buildContent(),
+                ),
+              ],
+            ),
           ),
           _buildProceedButton(),
         ],
@@ -68,7 +75,6 @@ class ProductDetail extends StatelessWidget {
           product.description,
           style: const TextStyle(fontSize: 16.0),
         ),
-        const SizedBox(height: 80.0), // Add Padding for button
       ],
     );
   }
@@ -100,7 +106,7 @@ class ProductDetail extends StatelessWidget {
         height: 50,
         child: AppButton(
           onTap: () {
-            // TODO: Handle tap
+            // TODO: To Cart
           },
           child: const Text(
             'Add To Cart',

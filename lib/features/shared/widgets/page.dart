@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+/// [Title] is required to show the [AppBar].
+/// If there is no title, use empty string instead of null to show the [AppBar]
+///
 class AppPage extends StatelessWidget {
   final Widget body;
+  final String? title;
+  final List<Widget>? actions;
   final Color? backgroundColor;
   final ImageProvider? backgroundImage;
   final Widget? backgroundWidget;
@@ -9,6 +15,8 @@ class AppPage extends StatelessWidget {
 
   const AppPage({
     required this.body,
+    this.title,
+    this.actions,
     this.backgroundColor,
     this.backgroundImage,
     this.backgroundWidget,
@@ -27,6 +35,21 @@ class AppPage extends StatelessWidget {
         child: Scaffold(
           resizeToAvoidBottomInset: true,
           backgroundColor: backgroundColor,
+          appBar: title == null
+              ? null
+              : AppBar(
+                  leading: GestureDetector(
+                    onTap: () => Get.back(),
+                    child: const Icon(Icons.arrow_back_ios_new),
+                  ),
+                  title: Text(title ?? ''),
+                  actions: [
+                    ...?actions,
+                    Container(
+                      width: 14, // Add Gap
+                    ),
+                  ],
+                ),
           body: Stack(
             children: [
               if (backgroundImage != null)

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 /// Application custom styles and themes
 class AppTheme {
-  static const int primaryInt = 0xFF25275C; // Used for primary swatch
+  static const int primaryInt = 0xFF5FCB8A; // Used for primary swatch
 
   // APP COLOR
   static Color primary = const Color(primaryInt);

@@ -39,6 +39,7 @@ class ErrorModel {
       'error': error.toString(),
       'occurred_at': occurredAt.toIso8601String(),
       'send_error': sendError,
+      'is_fatal': isFatal,
     };
 
     if (debugTitle != null) data['debug_title'] = debugTitle!;

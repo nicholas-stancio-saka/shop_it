@@ -9,6 +9,9 @@ import 'package:shop_it/core/services/storage/local_storage_service.dart';
 import 'package:shop_it/core/services/utils/global_loader.dart';
 
 /// This controller will called on every time this app loads, and is the starting point
+///
+/// NOTE: Controller ini dibuat dengan tujuan aplikasi [website].
+/// Android atau OS lainnya bisa menggunakan ini, tapi sangat bisa dipersimpel
 class InitController extends GetxController {
   final ApiHealthCheckService _apiHealthCheckService;
   final LocalStorageService _localStorageService;

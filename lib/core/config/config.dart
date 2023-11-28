@@ -38,7 +38,7 @@ class AppConfig {
 
   static const baseUrl = String.fromEnvironment(
     'BASE_URL',
-    defaultValue: 'https://prosper.nss-productions.com',
+    defaultValue: 'https://fakestoreapi.com',
   );
 
   // NOTE: Case sensitive

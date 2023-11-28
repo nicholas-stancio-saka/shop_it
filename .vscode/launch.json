@@ -11,7 +11,7 @@
             "type": "dart",
             "args": [
                 "--dart-define=APP_TYPE=debug",
-                "--dart-define=BASE_URL=https://prosper.nss-productions.com",
+                "--dart-define=BASE_URL=https://fakestoreapi.com",
                 "--dart-define=ENABLE_LOG=true",
             ]
         },
@@ -24,7 +24,7 @@
                 "-d",
                 "chrome",
                 "--dart-define=APP_TYPE=debug",
-                "--dart-define=BASE_URL=https://prosper.nss-productions.com",
+                "--dart-define=BASE_URL=https://fakestoreapi.com",
                 "--dart-define=ENABLE_LOG=true",
                 "--web-renderer=html",
             ]
@@ -35,7 +35,7 @@
             "type": "dart",
             "args": [
                 "--dart-define=APP_TYPE=profile",
-                "--dart-define=BASE_URL=https://prosper.nss-productions.com",
+                "--dart-define=BASE_URL=https://fakestoreapi.com",
                 "--dart-define=ENABLE_LOG=true",
             ],
             "flutterMode": "profile"
@@ -46,7 +46,7 @@
             "type": "dart",
             "args": [
                 "--dart-define=APP_TYPE=release",
-                "--dart-define=BASE_URL=https://prosper.nss-productions.com",
+                "--dart-define=BASE_URL=https://fakestoreapi.com",
                 "--dart-define=ENABLE_LOG=false",
             ],
             "flutterMode": "release"

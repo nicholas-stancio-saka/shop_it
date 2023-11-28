@@ -7,7 +7,7 @@
         {
             "label": "Build Debug",
             "type": "shell",
-            "command": "flutter build apk --debug --dart-define=APP_TYPE=debug --dart-define=BASE_URL=https://prosper.nss-productions.com --dart-define=ENABLE_LOG=true",
+            "command": "flutter build apk --debug --dart-define=APP_TYPE=debug --dart-define=BASE_URL=https://fakestoreapi.com --dart-define=ENABLE_LOG=true",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -17,7 +17,7 @@
         {
             "label": "Build Profile",
             "type": "shell",
-            "command": "flutter build apk --profile --dart-define=APP_TYPE=profile --dart-define=BASE_URL=https://prosper.nss-productions.com --dart-define=ENABLE_LOG=true",
+            "command": "flutter build apk --profile --dart-define=APP_TYPE=profile --dart-define=BASE_URL=https://fakestoreapi.com --dart-define=ENABLE_LOG=true",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -27,7 +27,7 @@
         {
             "label": "Build Profile Web",
             "type": "shell",
-            "command": "flutter build web --profile --web-renderer=html --dart-define=APP_TYPE=profile --dart-define=BASE_URL=https://prosper.nss-productions.com --dart-define=ENABLE_LOG=true",
+            "command": "flutter build web --profile --web-renderer=html --dart-define=APP_TYPE=profile --dart-define=BASE_URL=https://fakestoreapi.com --dart-define=ENABLE_LOG=true",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -37,7 +37,7 @@
         {
             "label": "Build Release",
             "type": "shell",
-            "command": "flutter build apk --release --dart-define=APP_TYPE=release --dart-define=BASE_URL=https://prosper.nss-productions.com --dart-define=ENABLE_LOG=false",
+            "command": "flutter build apk --release --dart-define=APP_TYPE=release --dart-define=BASE_URL=https://fakestoreapi.com --dart-define=ENABLE_LOG=false",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -47,7 +47,7 @@
         {
             "label": "Build Release Web",
             "type": "shell",
-            "command": "flutter build web --release --web-renderer=html --dart-define=APP_TYPE=release --dart-define=BASE_URL=https://prosper.nss-productions.com --dart-define=ENABLE_LOG=false",
+            "command": "flutter build web --release --web-renderer=html --dart-define=APP_TYPE=release --dart-define=BASE_URL=https://fakestoreapi.com --dart-define=ENABLE_LOG=false",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -57,7 +57,7 @@
         {
             "label": "Build App Bundle",
             "type": "shell",
-            "command": "flutter build appbundle --dart-define=APP_TYPE=release --dart-define=BASE_URL=https://prosper.nss-productions.com --dart-define=ENABLE_LOG=false"
+            "command": "flutter build appbundle --dart-define=APP_TYPE=release --dart-define=BASE_URL=https://fakestoreapi.com --dart-define=ENABLE_LOG=false"
         },
         {
             "label": "Deploy Web Staging",

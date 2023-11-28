@@ -58,6 +58,7 @@ class ProductDetail extends StatelessWidget {
                   ),
             ),
             const Spacer(),
+            // TODO: Implement like
             Icon(
               Icons.favorite_border,
               color: AppTheme.primary,

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:shop_it/features/auth/data/models/register_utils.dart';
+import 'package:shop_it/features/auth/data/models/auth_utils.dart';
 
 class RegisterRequest {
   final String email;

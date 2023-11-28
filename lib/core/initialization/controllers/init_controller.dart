@@ -66,7 +66,8 @@ class InitController extends GetxController {
   Future<void> _checkAuth() async {
     try {
       // Get saved token
-      final token = await _localStorageService.read(StorageKeys.token);
+      // final token = await _localStorageService.read(StorageKeys.token);
+      const String token = 'TEMPORARY TOKEN';
 
       // Check token status
       final isValid = await _validateToken(token);

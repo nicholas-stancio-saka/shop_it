@@ -15,6 +15,7 @@ import 'package:shop_it/features/auth/presentation/controllers/auth_controller.d
 import 'package:shop_it/features/home/data/datasources/home_remote_data_source.dart';
 import 'package:shop_it/features/home/domain/usecases/logout.dart';
 import 'package:shop_it/features/home/presentation/controllers/home_controller.dart';
+import 'package:shop_it/features/product_list/presentation/controllers/product_list_controller.dart';
 
 enum DioTokenType { noToken, token }
 
@@ -52,4 +53,5 @@ void initializeAfterAuthDependencies(String token) {
 
   // Controllers
   Get.lazyPut<HomeController>(() => HomeController(Get.find()), fenix: true);
+  Get.lazyPut<ProductListController>(() => ProductListController(), fenix: true);
 }

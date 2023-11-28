@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:shop_it/features/auth/data/models/auth_utils.dart';
 
-class RegisterRequest {
+class RegisterResponse {
   final int id;
   final String email;
   final String username;
@@ -11,7 +11,7 @@ class RegisterRequest {
   final Address address;
   final String phone;
 
-  RegisterRequest({
+  RegisterResponse({
     required this.id,
     required this.email,
     required this.username,
@@ -21,11 +21,11 @@ class RegisterRequest {
     required this.phone,
   });
 
-  factory RegisterRequest.fromRawJson(String str) => RegisterRequest.fromJson(json.decode(str));
+  factory RegisterResponse.fromRawJson(String str) => RegisterResponse.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
-  factory RegisterRequest.fromJson(Map<String, dynamic> json) => RegisterRequest(
+  factory RegisterResponse.fromJson(Map<String, dynamic> json) => RegisterResponse(
         id: json["id"],
         email: json["email"],
         username: json["username"],

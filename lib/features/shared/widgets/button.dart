@@ -36,9 +36,10 @@ class AppButton extends StatelessWidget {
           ? ElevatedButton(
               style: ElevatedButton.styleFrom(
                 elevation: 0,
-                backgroundColor: Theme.of(context).primaryColor, // Deprecated in later versions of Flutter. Use `backgroundColor` instead.
+                backgroundColor: Theme.of(context).primaryColor,
                 shape: shape,
                 padding: padding,
+                foregroundColor: Colors.white,
               ),
               onPressed: onTap,
               child: child,

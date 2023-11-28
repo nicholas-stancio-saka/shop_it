@@ -7,9 +7,9 @@ import 'package:shop_it/features/auth/domain/usecases/login_user.dart';
 import 'package:shop_it/features/auth/domain/usecases/register_user.dart';
 import 'package:shop_it/features/auth/domain/usecases/reset_password.dart';
 
-enum IntroPages { login, register, resetPassword }
+enum AuthPages { login, register, resetPassword }
 
-class LoginController extends GetxController {
+class AuthController extends GetxController {
   // Use cases
   final LoginUser _loginUser;
   final RegisterUser _registerUser;
@@ -25,12 +25,12 @@ class LoginController extends GetxController {
   final RxString password = ''.obs;
   final RxString rePassword = ''.obs;
 
-  final currentPage = IntroPages.login.obs;
+  final currentPage = AuthPages.login.obs;
   final isPasswordHidden = true.obs;
   final errorMessage = Rxn<String>();
 
   // Constructor
-  LoginController({
+  AuthController({
     required LoginUser loginUser,
     required RegisterUser registerUser,
     required ResetPassword resetPassword,
@@ -40,17 +40,17 @@ class LoginController extends GetxController {
 
   // UI Navigation Methods
   void toLogin() {
-    currentPage.value = IntroPages.login;
+    currentPage.value = AuthPages.login;
     cleanVariables();
   }
 
   void toCreateAccount() {
-    currentPage.value = IntroPages.register;
+    currentPage.value = AuthPages.register;
     cleanVariables();
   }
 
   void toResetPassword() {
-    currentPage.value = IntroPages.resetPassword;
+    currentPage.value = AuthPages.resetPassword;
     cleanVariables();
   }
 

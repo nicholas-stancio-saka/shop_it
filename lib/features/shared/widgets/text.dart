@@ -23,6 +23,7 @@ class AppTextField extends StatelessWidget {
   final void Function(String)? onChanged;
   final TextAlign textAlign;
   final List<TextInputFormatter>? inputFormatters;
+  final Widget? prefix;
 
   const AppTextField({
     this.controller,
@@ -36,6 +37,7 @@ class AppTextField extends StatelessWidget {
     this.keyboardType,
     this.suffixIcon,
     this.prefixIcon,
+    this.prefix,
     this.isDense,
     this.validator,
     this.style,
@@ -57,13 +59,16 @@ class AppTextField extends StatelessWidget {
             contentPadding: const EdgeInsets.symmetric(horizontal: 12),
             enabledBorder: enabledBorder,
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5.0),
+              borderRadius: BorderRadius.circular(10.0),
             ),
             labelText: labelText,
             labelStyle: labelStyle,
             floatingLabelBehavior: floatingLabelBehavior,
+            floatingLabelAlignment: FloatingLabelAlignment.start,
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
+
+            prefix: prefix,
             isDense: isDense,
             errorStyle: const TextStyle(height: 0, fontSize: 0), // Hides the error text
           ),

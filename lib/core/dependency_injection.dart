@@ -11,7 +11,7 @@ import 'package:shop_it/features/auth/domain/repositories/auth_repository.dart';
 import 'package:shop_it/features/auth/domain/usecases/login_user.dart';
 import 'package:shop_it/features/auth/domain/usecases/register_user.dart';
 import 'package:shop_it/features/auth/domain/usecases/reset_password.dart';
-import 'package:shop_it/features/auth/presentation/controllers/login_controller.dart';
+import 'package:shop_it/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:shop_it/features/home/data/datasources/home_remote_data_source.dart';
 import 'package:shop_it/features/home/domain/usecases/logout.dart';
 import 'package:shop_it/features/home/presentation/controllers/home_controller.dart';
@@ -38,7 +38,7 @@ void initializeDependencies() {
   Get.lazyPut(() => ResetPassword(Get.find()), fenix: true);
 
   // Controllers
-  Get.lazyPut(() => LoginController(loginUser: Get.find(), registerUser: Get.find(), resetPassword: Get.find()), fenix: true);
+  Get.lazyPut(() => AuthController(loginUser: Get.find(), registerUser: Get.find(), resetPassword: Get.find()), fenix: true);
 }
 
 /// These dependencies will be called after getting the token

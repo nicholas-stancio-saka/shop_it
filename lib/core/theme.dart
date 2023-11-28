@@ -8,7 +8,6 @@ class AppTheme {
 
   // APP COLOR
   static Color primary = const Color(primaryInt);
-  static Color secondary = const Color(0xFF3576A4);
   static Color error = const Color(0xFFFF564B);
   static Color black = const Color(0xFF242424);
 
@@ -27,10 +26,14 @@ class AppTheme {
   };
 
   static ThemeData themeData = ThemeData(
-    useMaterial3: false,
+    useMaterial3: true,
     primaryColor: primary,
+    colorScheme: ColorScheme.fromSwatch(
+      primarySwatch: MaterialColor(primaryInt, primarysMaps),
+    ),
     fontFamily: 'Roboto',
     primarySwatch: MaterialColor(primaryInt, primarysMaps),
+    scaffoldBackgroundColor: Colors.white,
     dividerTheme: const DividerThemeData(
       color: Color(0xFFE9E9E9),
       thickness: 1,
@@ -38,6 +41,7 @@ class AppTheme {
       indent: 0,
       endIndent: 0,
     ),
+
     // TODO: Do you have your own text theme?
     textTheme: const TextTheme(
       displayLarge: TextStyle(

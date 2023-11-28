@@ -37,6 +37,14 @@ class InitController extends GetxController {
 
       await _checkAuth();
     } catch (e, st) {
+      /// Handle when API / Connection is having issues
+      /// This is the worse case scenario and should not happen
+      ///
+      /// This can be handled better by:
+      /// 1. Implementing offline capability
+      /// 2. Create a temporary page while checking API
+      /// 3. Give user documentations to try and fix the issue
+
       await AppErrorUtility.defaultErrorDialog(
         ErrorModel(
           type: ErrorType.network,

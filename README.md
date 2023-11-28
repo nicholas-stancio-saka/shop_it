@@ -18,3 +18,19 @@ Firebase Crashlytics --> Error handling on productions
 'https://fakestoreapi.com/users' -> Create Account
 'https://fakestoreapi.com/auth/login' -> Login
 'https://fakestoreapi.com/users/$id' -> Get User (Combine with login)
+
+## Potential Improvements
+
+### Auth
+- Implement Real Auth (Login & Register). Saat ini API gabisa. Tapi code & stuktur udah siap kalau bisa pindah
+- Reset password gaada apinya
+- Api Login kasih user ID juga, kalo ga sediain cara buat either
+    - Dapet User (Lengkap) dari post token
+    - Dapet User dari username
+    - Kalo ga atleast kasih ID biar bisa hit API get user
+- Additional handling kalau API lagi down
+
+### Product List
+- Implement Lazy Load
+- Mungkin category bisa dibuat swipe pake PageView atau yng mirip. Depends on the requirement maunya gimana
+- Image placeholder kalau fail

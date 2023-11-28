@@ -16,9 +16,6 @@ dependencies:
   # State Management
   get: ^4.6.5
 
-  # Text auto control
-  auto_size_text: ^3.0.0
-
   # Localization
   intl: ^0.18.1
 
@@ -30,20 +27,13 @@ dependencies:
 
   # Firebase
   firebase_core: ^2.4.1
-  firebase_storage: ^11.0.10
-  firebase_remote_config: ^4.3.2
   firebase_auth: ^4.2.2
-  firebase_analytics: ^10.1.4
   cloud_firestore: ^4.3.1
 
   # Error Logging
   firebase_crashlytics: ^3.4.5
 
   # UI Related
-  syncfusion_flutter_core: ^23.1.44
-  syncfusion_flutter_datagrid: ^23.1.44
-  syncfusion_flutter_datepicker: ^23.1.44
-
   shimmer: ^3.0.0
   toastification: ^1.1.0
   flutter_easyloading: ^3.0.5

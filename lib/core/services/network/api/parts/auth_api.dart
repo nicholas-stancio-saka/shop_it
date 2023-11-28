@@ -13,6 +13,12 @@ extension AuthApi on AppApi {
     return response.data;
   }
 
+  Future<Map<String, dynamic>> getUser(String userId) async {
+    final response = await dio.get('/users/$userId');
+
+    return response.data;
+  }
+
   Future<void> logout() async {
     // There is no logout feature in api.
   }

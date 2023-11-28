@@ -12,3 +12,4 @@ Firebase Crashlytics --> Error handling on productions
 ## API Usage
 'https://fakestoreapi.com/users' -> Create Account
 'https://fakestoreapi.com/auth/login' -> Login
+'https://fakestoreapi.com/users/$id' -> Get User (Combine with login)

@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:shop_it/core/services/network/firebase/auth.dart';
 
 // Include the parts
 part 'parts/utility_api.dart';

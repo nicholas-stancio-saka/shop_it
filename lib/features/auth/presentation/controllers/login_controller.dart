@@ -1,6 +1,5 @@
 // ignore_for_file: unused_local_variable
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_it/core/services/utils/global_loader.dart';
@@ -83,8 +82,6 @@ class LoginController extends GetxController {
       final user = await _loginUser.call(email, password);
       // Navigate to Home Screen on success
       toHomeScreen();
-    } on FirebaseAuthException catch (e) {
-      errorMessage.value = e.message;
     } catch (e) {
       errorMessage.value = 'An unexpected error occurred.';
     }
@@ -113,8 +110,6 @@ class LoginController extends GetxController {
       final user = await _registerUser.call(email, password);
       // Navigate to Home Screen on success
       toHomeScreen();
-    } on FirebaseAuthException catch (e) {
-      errorMessage.value = e.message;
     } catch (e) {
       errorMessage.value = 'An unexpected error occurred.';
     }
@@ -136,8 +131,6 @@ class LoginController extends GetxController {
       // Show success dialog/message
       Get.snackbar('Success', 'Password reset email has been sent.');
       toLogin();
-    } on FirebaseAuthException catch (e) {
-      errorMessage.value = e.message;
     } catch (e) {
       errorMessage.value = 'An unexpected error occurred.';
     }

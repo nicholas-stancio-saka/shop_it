@@ -20,6 +20,6 @@ extension AuthApi on AppApi {
 
   // Remove all storage
   Future<void> logout() async {
-    await AppFirebaseAuth().signOut();
+    // await AppFirebaseAuth().signOut();
   }
 }

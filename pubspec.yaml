@@ -27,7 +27,6 @@ dependencies:
 
   # Firebase
   firebase_core: ^2.4.1
-  firebase_auth: ^4.2.2
   
   # Error Logging
   firebase_crashlytics: ^3.4.5

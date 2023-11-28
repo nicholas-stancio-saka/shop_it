@@ -1,0 +1,81 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    // TODO: Set BASE_URL
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Debug",
+            "type": "shell",
+            "command": "flutter build apk --debug --dart-define=APP_TYPE=debug --dart-define=BASE_URL=https://prosper.nss-productions.com --dart-define=ENABLE_LOG=true",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build Profile",
+            "type": "shell",
+            "command": "flutter build apk --profile --dart-define=APP_TYPE=profile --dart-define=BASE_URL=https://prosper.nss-productions.com --dart-define=ENABLE_LOG=true",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build Profile Web",
+            "type": "shell",
+            "command": "flutter build web --profile --web-renderer=html --dart-define=APP_TYPE=profile --dart-define=BASE_URL=https://prosper.nss-productions.com --dart-define=ENABLE_LOG=true",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build Release",
+            "type": "shell",
+            "command": "flutter build apk --release --dart-define=APP_TYPE=release --dart-define=BASE_URL=https://prosper.nss-productions.com --dart-define=ENABLE_LOG=false",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build Release Web",
+            "type": "shell",
+            "command": "flutter build web --release --web-renderer=html --dart-define=APP_TYPE=release --dart-define=BASE_URL=https://prosper.nss-productions.com --dart-define=ENABLE_LOG=false",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build App Bundle",
+            "type": "shell",
+            "command": "flutter build appbundle --dart-define=APP_TYPE=release --dart-define=BASE_URL=https://prosper.nss-productions.com --dart-define=ENABLE_LOG=false"
+        },
+        {
+            "label": "Deploy Web Staging",
+            "type": "shell",
+            "command": "firebase hosting:channel:deploy staging --expires 30d",
+            "problemMatcher": [],
+            "dependsOn": [
+                "Build Profile Web"
+            ]
+        },
+        {
+            "label": "Deploy Web Production",
+            "type": "shell",
+            "command": "firebase deploy",
+            "problemMatcher": [],
+            "dependsOn": [
+                "Build Release Web"
+            ]
+        }
+    ]
+}

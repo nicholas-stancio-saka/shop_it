@@ -1,0 +1,55 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // TODO: Set BASE_URL
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=APP_TYPE=debug",
+                "--dart-define=BASE_URL=https://prosper.nss-productions.com",
+                "--dart-define=ENABLE_LOG=true",
+            ]
+        },
+        {
+            "name": "Debug Web",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "run",
+                "-d",
+                "chrome",
+                "--dart-define=APP_TYPE=debug",
+                "--dart-define=BASE_URL=https://prosper.nss-productions.com",
+                "--dart-define=ENABLE_LOG=true",
+                "--web-renderer=html",
+            ]
+        },
+        {
+            "name": "Profile",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=APP_TYPE=profile",
+                "--dart-define=BASE_URL=https://prosper.nss-productions.com",
+                "--dart-define=ENABLE_LOG=true",
+            ],
+            "flutterMode": "profile"
+        },
+        {
+            "name": "Release",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=APP_TYPE=release",
+                "--dart-define=BASE_URL=https://prosper.nss-productions.com",
+                "--dart-define=ENABLE_LOG=false",
+            ],
+            "flutterMode": "release"
+        }
+    ]
+}

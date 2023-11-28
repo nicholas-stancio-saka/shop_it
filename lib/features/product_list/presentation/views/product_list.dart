@@ -39,7 +39,9 @@ class ProductListScreen extends StatelessWidget {
             ),
             CategoryRow(
               categories: productListController.categoryList,
-              onCategoryTap: (Category value) {},
+              onCategoryTap: (Category category) {
+                productListController.updateCategory(category);
+              },
             ),
             Container(
               height: 20,

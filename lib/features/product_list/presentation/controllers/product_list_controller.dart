@@ -36,6 +36,10 @@ class ProductListController extends GetxController {
     }
   }
 
+  Future<void> updateCategory(Category category) async {
+    await _fetchProducts(category.id);
+  }
+
   Future<void> _fetchCategories() async {
     categoryList.value = await _categoryUseCase.call();
   }

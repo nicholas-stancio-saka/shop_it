@@ -12,7 +12,7 @@ extension UtilityApi on AppApi {
   ///
   /// Will not throw error if unauthenticated
   Future<void> ping() async {
-    await dio.get('/docs');
+    // await dio.get('/docs');
   }
 
   /// Check API (With Token)
@@ -21,6 +21,6 @@ extension UtilityApi on AppApi {
   ///
   /// Note: This will never return error since there is no auth in the API
   Future<void> securePing() async {
-    await dio.get('/docs');
+    // await dio.get('/docs');
   }
 }

@@ -23,16 +23,19 @@ class AuthWidgets {
   }
 
   Widget buildTextFields(String labelText, TextEditingController controller, {TextInputType? keyboardType, Widget? prefixIcon}) {
-    return AppTextField(
-      controller: controller,
-      labelText: labelText,
-      keyboardType: keyboardType,
-      enabledBorder: authController.errorMessage.value == null
-          ? null
-          : OutlineInputBorder(
-              borderSide: BorderSide(color: AppTheme.error),
-            ),
-      prefixIcon: prefixIcon,
+    return Obx(
+      () => AppTextField(
+        controller: controller,
+        labelText: labelText,
+        keyboardType: keyboardType,
+        enabledBorder: authController.errorMessage.value == null
+            ? null
+            : OutlineInputBorder(
+                borderSide: BorderSide(color: AppTheme.error),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+        prefixIcon: prefixIcon,
+      ),
     );
   }
 
@@ -45,6 +48,7 @@ class AuthWidgets {
             ? null
             : OutlineInputBorder(
                 borderSide: BorderSide(color: AppTheme.error),
+                borderRadius: BorderRadius.circular(10.0),
               ),
         obscureText: isPasswordHiddenLogic.value ? true : false,
         suffixIcon: GestureDetector(

@@ -41,17 +41,17 @@ class AuthController extends GetxController {
   // UI Navigation Methods
   void toLogin() {
     currentPage.value = AuthPages.login;
-    cleanVariables();
+    cleanVariables(cleanError: true);
   }
 
   void toCreateAccount() {
     currentPage.value = AuthPages.register;
-    cleanVariables();
+    cleanVariables(cleanError: true);
   }
 
   void toResetPassword() {
     currentPage.value = AuthPages.resetPassword;
-    cleanVariables();
+    cleanVariables(cleanError: true);
   }
 
   void toHomeScreen() {
@@ -59,11 +59,11 @@ class AuthController extends GetxController {
   }
 
   // Helper Method to clear inputs
-  void cleanVariables() {
-    emailController.clear();
+  void cleanVariables({bool cleanError = false}) {
+    // emailController.clear(); // Uncomment this to clear email
     passwordController.clear();
     rePasswordController.clear();
-    errorMessage.value = null;
+    if (cleanError) errorMessage.value = null;
   }
 
   // Main Auth Functions
@@ -85,6 +85,8 @@ class AuthController extends GetxController {
     } catch (e) {
       errorMessage.value = 'An unexpected error occurred.';
     }
+
+    cleanVariables();
     AppGlobalLoader.hideLoading();
   }
 
@@ -113,6 +115,8 @@ class AuthController extends GetxController {
     } catch (e) {
       errorMessage.value = 'An unexpected error occurred.';
     }
+
+    cleanVariables();
     AppGlobalLoader.hideLoading();
   }
 
@@ -128,12 +132,15 @@ class AuthController extends GetxController {
 
     try {
       await _resetPassword.call(email);
+
       // Show success dialog/message
-      Get.snackbar('Success', 'Password reset email has been sent.');
+      // Get.snackbar('Success', 'Password reset email has been sent.');
       toLogin();
     } catch (e) {
       errorMessage.value = 'An unexpected error occurred.';
     }
+
+    cleanVariables();
     AppGlobalLoader.hideLoading();
   }
 

@@ -1,5 +1,6 @@
+import 'package:shop_it/core/error/error_model.dart';
+import 'package:shop_it/core/error/error_utility.dart';
 import 'package:shop_it/features/auth/domain/repositories/auth_repository.dart';
-import 'package:shop_it/features/shared/widgets/dialog.dart';
 
 class ResetPassword {
   final AuthRepository repository;
@@ -7,9 +8,13 @@ class ResetPassword {
   ResetPassword(this.repository);
 
   Future<void> call(String email) async {
-    // await repository.resetPassword(email);
-    const AppSimpleDialog(
-      text: 'Not Implemented',
+    await AppErrorUtility.defaultErrorDialog(
+      ErrorModel(
+        type: ErrorType.presentation,
+        shownTitle: 'Not Implemented',
+        shownText: 'Sorry! This feature is not yet implemented!',
+        sendError: false,
+      ),
     );
   }
 }

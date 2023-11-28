@@ -27,6 +27,7 @@ class AppSimpleDialog extends StatelessWidget {
         return Future.value(true);
       },
       child: AlertDialog(
+        backgroundColor: Colors.white,
         content: Container(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Column(

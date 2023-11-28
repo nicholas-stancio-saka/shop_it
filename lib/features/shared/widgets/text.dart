@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 
 class AppTextField extends StatelessWidget {
   final TextEditingController? controller;
@@ -73,7 +72,7 @@ class AppTextField extends StatelessWidget {
             errorStyle: const TextStyle(height: 0, fontSize: 0), // Hides the error text
           ),
       keyboardType: keyboardType,
-      style: style ?? Theme.of(Get.context!).textTheme.bodyMedium!,
+      style: style,
       readOnly: readOnly,
       obscureText: obscureText,
       validator: validator,

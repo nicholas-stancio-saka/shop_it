@@ -33,7 +33,7 @@ class ProductListScreen extends StatelessWidget {
             Container(
               width: double.infinity,
             ),
-            _buildTitleBar('John'),
+            _buildTitleBar('John'), // TODO: Use the local storage name, defaults to 'Guest'
             Container(
               height: 20,
             ),
@@ -59,7 +59,6 @@ class ProductListScreen extends StatelessWidget {
                     return ProductCard(
                       product: productListController.productList[index],
                       onTap: () {
-                        // TODO: Handle onTap
                         Get.toNamed('/product_detail', arguments: productListController.productList[index]);
                       },
                     );

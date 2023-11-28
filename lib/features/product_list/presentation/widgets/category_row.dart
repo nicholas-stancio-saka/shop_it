@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop_it/core/services/utils/string_converter.dart';
 import 'package:shop_it/core/theme.dart';
 import 'package:shop_it/features/product_list/domain/entities/category.dart';
 
@@ -33,7 +34,7 @@ class CategoryRow extends StatelessWidget {
                     borderRadius: BorderRadius.circular(18),
                   ),
                   child: Text(
-                    category.name,
+                    AppStringConverter.capitalizeEachWord(category.name),
                     style: TextStyle(
                       color: isSelected ? Colors.white : Colors.black54,
                     ),

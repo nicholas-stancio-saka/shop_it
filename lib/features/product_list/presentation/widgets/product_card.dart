@@ -90,9 +90,12 @@ class ProductCard extends StatelessWidget {
   }
 
   Widget _buildImage() {
-    return Image.network(
-      product.imageUrl,
-      fit: BoxFit.cover,
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Image.network(
+        product.imageUrl,
+        fit: BoxFit.contain,
+      ),
     );
   }
 

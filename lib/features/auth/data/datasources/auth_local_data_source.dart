@@ -1,4 +1,5 @@
 import 'package:shop_it/core/services/storage/local_storage_service.dart';
+import 'package:shop_it/features/auth/domain/entities/user.dart';
 
 class AuthLocalDataSource {
   final LocalStorageService _localStorageService;
@@ -9,7 +10,8 @@ class AuthLocalDataSource {
     await _localStorageService.write(StorageKeys.token, token);
   }
 
-  Future<void> saveUserID(int userId) async {
-    await _localStorageService.write(StorageKeys.userId, userId);
+  Future<void> saveUser(User user) async {
+    await _localStorageService.write(StorageKeys.userId, user.id);
+    await _localStorageService.write(StorageKeys.userId, user.name);
   }
 }

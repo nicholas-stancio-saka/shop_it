@@ -13,7 +13,7 @@ extension AuthApi on AppApi {
     return response.data;
   }
 
-  Future<Map<String, dynamic>> getUser(String userId) async {
+  Future<Map<String, dynamic>> getUser(int userId) async {
     final response = await dio.get('/users/$userId');
 
     return response.data;

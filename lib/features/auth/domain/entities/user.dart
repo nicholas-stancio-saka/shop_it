@@ -1,18 +1,9 @@
-import 'package:shop_it/features/auth/data/models/auth_response.dart';
-
 class User {
   final int id;
-  final String email;
+  final String name;
 
   User({
     required this.id,
-    required this.email,
+    required this.name,
   });
-
-  factory User.fromApi(AuthResponse authResponse) {
-    return User(
-      id: authResponse.user.id,
-      email: authResponse.user.email,
-    );
-  }
 }

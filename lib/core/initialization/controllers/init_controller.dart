@@ -83,7 +83,7 @@ class InitController extends GetxController {
   /// This function pings to '/ping-secure'
   Future<bool> _validateToken(String? token) async {
     try {
-      // Should not use AppDio for this, create new dio instance instead
+      // Should not use DI AppDio for this, create new dio instance instead
       final dioToken = AppDio.initAppDioTokenInstance(token!, addWrapper: false);
 
       await AppApi(dio: dioToken).securePing();

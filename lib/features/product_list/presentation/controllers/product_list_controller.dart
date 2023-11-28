@@ -18,7 +18,8 @@ class ProductListController extends GetxController {
         id: 0,
         imageUrl: 'https://via.placeholder.com/150',
         name: 'Product 0 Product 0 Product 0 Product 0 Product 0 Product 0 Product 0 Product 0 Product 0',
-        description: 'Description of Product 0',
+        description:
+            'Description of Product 0Description of Product 0DescriptioDescription of Product 0Description of Product 0Description of Product 0Description of Product 0Description of Product 0Description of Product 0n of Product 0Description of Product 0Description of Product 0Description of Product 0Description of Product 0Description of Product 0Description of Product 0Description of Product 0Description of Product 0Description of Product 0Description of Product 0',
         rating: '4.5',
         reviewCount: '10',
         price: 29.99,

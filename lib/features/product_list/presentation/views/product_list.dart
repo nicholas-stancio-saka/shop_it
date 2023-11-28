@@ -48,6 +48,7 @@ class ProductListScreen extends StatelessWidget {
                     product: productListController.productList[index],
                     onTap: () {
                       // TODO: Handle onTap
+                      Get.toNamed('/product_detail', arguments: productListController.productList[index]);
                     },
                   );
                 },

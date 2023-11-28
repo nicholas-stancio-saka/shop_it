@@ -19,7 +19,9 @@ class DefaultFirebaseOptions {
 
   static FirebaseOptions get currentPlatformDebug {
     if (kIsWeb) {
-      return webDebug;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions are not supported for this platform.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -31,11 +33,16 @@ class DefaultFirebaseOptions {
     }
   }
 
+  // TODO: Setup Release Project
   static FirebaseOptions get currentPlatformRelease {
     if (kIsWeb) {
-      throw Exception("SHOULD NOT HAPPEN! We won't be using firebase on release");
+      throw UnsupportedError(
+        'DefaultFirebaseOptions are not supported for this platform.',
+      );
     }
     switch (defaultTargetPlatform) {
+      case TargetPlatform.android:
+        return android;
       default:
         throw UnsupportedError(
           'DefaultFirebaseOptions are not supported for this platform.',
@@ -43,21 +50,13 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions webDebug = FirebaseOptions(
-    apiKey: 'AIzaSyDCMxlK8TANMRX4_y11xn3OxGtFxHp2TyQ',
-    appId: '1:520640843087:web:c884e66edea39128ff893a',
-    messagingSenderId: '520640843087',
-    projectId: 'prosper-dev-f712e',
-    authDomain: 'prosper-dev-f712e.firebaseapp.com',
-    storageBucket: 'prosper-dev-f712e.appspot.com',
-    measurementId: 'G-D0TS28RG14',
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyAvF_WkIdWgNXXjLnIeMKC4tFzUcyOe9jw',
+    appId: '1:131787696741:android:de629a9d3b86b15b61348c',
+    messagingSenderId: '131787696741',
+    projectId: 'shop-it-a3673',
+    storageBucket: 'shop-it-a3673.appspot.com',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCRCEHq6whcrPO_OEQyAiaSFMoyHe1TVAk',
-    appId: '1:520640843087:android:79f3b9c72a5450c1ff893a',
-    messagingSenderId: '520640843087',
-    projectId: 'prosper-dev-f712e',
-    storageBucket: 'prosper-dev-f712e.appspot.com',
-  );
+  // TODO: Setup iOS if needed
 }

@@ -5,7 +5,7 @@ import 'package:shop_it/core/config/config.dart';
 import 'package:shop_it/core/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop_it/features/auth/presentation/login_controller.dart';
+import 'package:shop_it/features/auth/presentation/controllers/login_controller.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});

@@ -1,5 +1,5 @@
 import 'package:shop_it/core/initialization/views/init_screen.dart';
-import 'package:shop_it/features/auth/presentation/login.dart';
+import 'package:shop_it/features/auth/presentation/views/login.dart';
 import 'package:shop_it/features/home/presentation/views/home.dart';
 import 'package:get/get.dart';
 

@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 // Include the parts
 part 'parts/utility_api.dart';
 part 'parts/auth_api.dart';
+part 'parts/cart_api.dart';
+part 'parts/product_api.dart';
 
 /// Main API class that handles all network requests.
 ///

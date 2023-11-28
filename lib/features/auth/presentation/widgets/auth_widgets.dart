@@ -163,6 +163,7 @@ class AuthWidgets {
             fontWeight: FontWeight.w500,
             fontSize: 14.0,
             letterSpacing: 0.1,
+            color: Colors.black54,
           ),
         ),
         GestureDetector(
@@ -177,7 +178,6 @@ class AuthWidgets {
               fontWeight: FontWeight.w500,
               fontSize: 14.0,
               letterSpacing: 0.1,
-              decoration: TextDecoration.underline,
               color: AppTheme.primary,
             ),
           ),

@@ -19,22 +19,11 @@ class LoginScreen extends StatelessWidget {
         Container(
           height: 100,
         ),
-        authWidgets.buildTextFields(
-          'Username',
-          authController.emailController,
-          prefixIcon: const Icon(
-            Icons.email_outlined,
-            color: Colors.black54,
-          ),
-        ),
+        authWidgets.buildTextFields('Username', authController.emailController, prefixIcon: const Icon(Icons.email_outlined, color: Colors.black54)),
         Container(
           height: 20,
         ),
-        authWidgets.buildPasswordTextFields(
-          'Password',
-          authController.passwordController,
-          authController.isPasswordHidden,
-        ),
+        authWidgets.buildPasswordTextFields('Password', authController.passwordController, authController.isPasswordHidden),
         Container(
           height: 10,
         ),

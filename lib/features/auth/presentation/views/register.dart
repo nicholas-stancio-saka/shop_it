@@ -19,9 +19,6 @@ class RegisterScreen extends StatelessWidget {
         Container(
           height: 100,
         ),
-        Container(
-          height: 20,
-        ),
         authWidgets.buildTextFields('Email', authController.emailController, keyboardType: TextInputType.emailAddress),
         Container(
           height: 20,
@@ -31,6 +28,10 @@ class RegisterScreen extends StatelessWidget {
           height: 20,
         ),
         authWidgets.buildPasswordTextFields('Re-enter Password', authController.rePasswordController, authController.isPasswordHidden),
+        Container(
+          height: 10,
+        ),
+        authWidgets.buildToResetPassword(),
         Container(
           height: 20,
         ),
@@ -44,10 +45,6 @@ class RegisterScreen extends StatelessWidget {
                   },
           ),
         ),
-        Container(
-          height: 30,
-        ),
-        authWidgets.buildToResetPassword(),
         Container(
           height: 20,
         ),

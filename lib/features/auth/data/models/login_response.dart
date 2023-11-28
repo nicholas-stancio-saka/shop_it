@@ -1,17 +1,17 @@
 import 'dart:convert';
 
-class AuthResponse {
+class LoginResponse {
   final String token;
 
-  AuthResponse({
+  LoginResponse({
     required this.token,
   });
 
-  factory AuthResponse.fromRawJson(String str) => AuthResponse.fromJson(json.decode(str));
+  factory LoginResponse.fromRawJson(String str) => LoginResponse.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
-  factory AuthResponse.fromJson(Map<String, dynamic> json) => AuthResponse(
+  factory LoginResponse.fromJson(Map<String, dynamic> json) => LoginResponse(
         token: json["token"],
       );
 

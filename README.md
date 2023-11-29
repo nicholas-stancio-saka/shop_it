@@ -39,3 +39,4 @@ Firebase Crashlytics --> Error handling on productions
 ### Product Search
 - There is no search API. so fetch all products and manually search
 - If the products never changes, bisa store local storage to improve performance
+- Bisa dikasih placeholder kalo empty / on init

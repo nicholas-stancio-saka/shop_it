@@ -27,11 +27,17 @@ class HomeTopBar extends StatelessWidget {
           child: Image.asset('assets/images/logo-text-2.png'),
         ),
         const Spacer(),
-        _iconBox(child: const Icon(Icons.search_outlined)),
+        _iconBox(
+          onTap: () => homeController.toSearch(),
+          child: const Icon(Icons.search_outlined),
+        ),
         Container(
           width: 10,
         ),
-        _iconBox(child: const Icon(Icons.shopping_cart_outlined)),
+        _iconBox(
+          onTap: () => homeController.toCart(),
+          child: const Icon(Icons.shopping_cart_outlined),
+        ),
         Container(
           width: 20,
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_it/core/theme.dart';
+import 'package:shop_it/features/product_detail/presentation/controllers/product_detail_controller.dart';
 import 'package:shop_it/features/product_list/domain/entities/product.dart';
 import 'package:shop_it/features/shared/widgets/button.dart';
 import 'package:shop_it/features/shared/widgets/page.dart';
@@ -8,14 +9,23 @@ import 'package:shop_it/features/shared/widgets/page.dart';
 class ProductDetail extends StatelessWidget {
   final Product product;
 
-  const ProductDetail(this.product, {super.key});
+  ProductDetail(this.product, {super.key});
+
+  final ProductDetailController productDetailController = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return AppPage(
       title: '',
-      actions: const [
-        // TODO: To Cart
+      actions: [
+        GestureDetector(
+          onTap: () => productDetailController.toCart(),
+          child: const SizedBox(
+            width: 22,
+            height: 22,
+            child: Icon(Icons.shopping_cart_outlined),
+          ),
+        ),
       ],
       body: Stack(
         children: [
@@ -110,7 +120,7 @@ class ProductDetail extends StatelessWidget {
         height: 50,
         child: AppButton(
           onTap: () {
-            // TODO: To Cart
+            Get.toNamed('cart');
           },
           child: const Text(
             'Add To Cart',

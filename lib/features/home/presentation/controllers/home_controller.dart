@@ -21,4 +21,12 @@ class HomeController extends GetxController {
     AppGlobalLoader.hideLoading();
     Get.offAllNamed('/auth');
   }
+
+  toSearch() {
+    Get.toNamed('/search');
+  }
+
+  toCart() {
+    Get.toNamed('/cart');
+  }
 }

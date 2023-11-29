@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_it/core/initialization/controllers/init_controller.dart';
 import 'package:shop_it/core/services/network/api/app_api.dart';
@@ -12,10 +13,12 @@ import 'package:shop_it/features/auth/domain/usecases/login_user.dart';
 import 'package:shop_it/features/auth/domain/usecases/register_user.dart';
 import 'package:shop_it/features/auth/domain/usecases/reset_password.dart';
 import 'package:shop_it/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:shop_it/features/cart/presentation/controllers/cart_controller.dart';
 import 'package:shop_it/features/home/data/datasources/home_local_data_source.dart';
 import 'package:shop_it/features/home/data/datasources/home_remote_data_source.dart';
 import 'package:shop_it/features/home/domain/usecases/logout.dart';
 import 'package:shop_it/features/home/presentation/controllers/home_controller.dart';
+import 'package:shop_it/features/product_detail/presentation/controllers/product_detail_controller.dart';
 import 'package:shop_it/features/product_list/data/datasources/product_list_remote_data_source.dart';
 import 'package:shop_it/features/product_list/data/repositories/product_list_repository_impl.dart';
 import 'package:shop_it/features/product_list/domain/repositories/product_list_repository_impl.dart';
@@ -67,4 +70,7 @@ void initializeAfterAuthDependencies(String token) {
   // Controllers
   Get.lazyPut<HomeController>(() => HomeController(Get.find()), fenix: true);
   Get.lazyPut<ProductListController>(() => ProductListController(Get.find(), Get.find()), fenix: true);
+  Get.lazyPut<ProductDetailController>(() => ProductDetailController(), fenix: true);
+  Get.lazyPut<SearchController>(() => SearchController(), fenix: true);
+  Get.lazyPut<CartController>(() => CartController(), fenix: true);
 }

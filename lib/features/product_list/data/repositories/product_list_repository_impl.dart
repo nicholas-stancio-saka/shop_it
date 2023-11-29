@@ -41,4 +41,19 @@ class ProductListRepositoryImpl implements ProductListRepository {
 
     return productList;
   }
+
+  @override
+  Future<List<Product>> getAllProductList() async {
+    final response = await remoteDataSource.getAllProductList();
+
+    final List<Product> productList = [];
+
+    for (var element in response) {
+      final GetProductResponse getProductResponse = GetProductResponse.fromJson(element);
+
+      productList.add(Product.fromGetProductResponse(getProductResponse));
+    }
+
+    return productList;
+  }
 }

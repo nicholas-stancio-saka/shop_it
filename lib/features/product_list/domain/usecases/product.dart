@@ -6,7 +6,11 @@ class ProductUseCase {
 
   ProductUseCase(this.repository);
 
-  Future<List<Product>> call(String categoryId) async {
+  Future<List<Product>> callSpecificCategory(String categoryId) async {
     return await repository.getProductList(categoryId);
+  }
+
+  Future<List<Product>> callAllCategory() async {
+    return await repository.getAllProductList();
   }
 }

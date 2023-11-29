@@ -12,4 +12,8 @@ class ProductListRemoteDataSource {
   Future<List<dynamic>> getProductList(String categoryId) async {
     return await _appApi.getProductInCategory(categoryId);
   }
+
+  Future<List<dynamic>> getAllProductList() async {
+    return await _appApi.getAllProducts();
+  }
 }

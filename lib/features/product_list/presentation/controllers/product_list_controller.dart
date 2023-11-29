@@ -12,19 +12,21 @@ class ProductListController extends GetxController {
 
   ProductListController(this._productUseCase, this._categoryUseCase);
 
-  // State Info
+  // State Info and obs
   final viewState = ViewStateInfo(state: ViewState.loading).obs;
 
   // Data
   final categoryList = <Category>[].obs;
   final productList = <Product>[].obs;
 
+  late Category selectedCategory;
+
   Future<void> onRefresh() async {
     try {
       viewState.value = ViewStateInfo(state: ViewState.loading);
 
       await _fetchCategories();
-      await _fetchProducts(categoryList[0].id);
+      await _fetchProducts(selectedCategory.id);
 
       viewState.value = ViewStateInfo(state: ViewState.success);
     } catch (e) {
@@ -36,16 +38,29 @@ class ProductListController extends GetxController {
     }
   }
 
-  Future<void> updateCategory(Category category) async {
-    await _fetchProducts(category.id);
+  Future<void> updateCategory(Category newCategory) async {
+    selectedCategory = newCategory;
+
+    if (newCategory.id == 'all') {
+      _fetchAllProducts();
+    } else {
+      await _fetchProducts(newCategory.id);
+    }
   }
 
   Future<void> _fetchCategories() async {
     categoryList.value = await _categoryUseCase.call();
+
+    // Insert the All category
+    categoryList.insert(0, Category(id: 'all', name: 'all'));
   }
 
   Future<void> _fetchProducts(String categoryId) async {
-    productList.value = await _productUseCase.call(categoryId);
+    productList.value = await _productUseCase.callSpecificCategory(categoryId);
+  }
+
+  Future<void> _fetchAllProducts() async {
+    productList.value = await _productUseCase.callAllCategory();
   }
 
   @override

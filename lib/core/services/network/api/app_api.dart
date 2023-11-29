@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:get/get.dart';
 
 // Include the parts
 part 'parts/utility_api.dart';

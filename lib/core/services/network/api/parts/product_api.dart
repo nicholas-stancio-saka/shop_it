@@ -12,4 +12,10 @@ extension ProductApi on AppApi {
 
     return response.data;
   }
+
+  Future<List<dynamic>> getAllProducts() async {
+    final response = await dio.get('/products');
+
+    return response.data;
+  }
 }

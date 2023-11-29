@@ -3,11 +3,6 @@
 part of '../app_api.dart';
 
 extension UtilityApi on AppApi {
-  // Redirect to login or handle the auth failure
-  void _handleAuthRedirect() {
-    Get.offAllNamed('/login');
-  }
-
   /// Check API (Without Token)
   ///
   /// Will not throw error if unauthenticated

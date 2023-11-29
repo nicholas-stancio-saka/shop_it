@@ -4,12 +4,10 @@ import 'package:shop_it/features/product_list/domain/entities/product.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
-  final void Function()? onTap;
   final bool isAlternate;
 
   const ProductCard({
     required this.product,
-    this.onTap,
     this.isAlternate = false,
     super.key,
   });
@@ -17,7 +15,9 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        Get.toNamed('/product_detail', arguments: product);
+      },
       child: Card(
         color: Colors.white,
         elevation: 1.0,

@@ -96,9 +96,6 @@ class ProductListScreen extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return ProductCard(
                     product: productListController.productList[index],
-                    onTap: () {
-                      Get.toNamed('/product_detail', arguments: productListController.productList[index]);
-                    },
                   );
                 },
               );

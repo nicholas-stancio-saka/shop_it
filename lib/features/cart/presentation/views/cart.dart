@@ -51,8 +51,20 @@ class CartScreen extends StatelessWidget {
         return Shimmer.fromColors(
             baseColor: Colors.grey[300]!,
             highlightColor: Colors.grey[100]!,
-            child: Container(
-              color: Colors.grey[300]!,
+            child: ListView.separated(
+              padding: const EdgeInsets.all(4.0),
+              itemCount: 3,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  color: Colors.grey[300]!,
+                  height: 120,
+                );
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return Container(
+                  height: 10,
+                );
+              },
             ));
 
         // TODO: Do better shimmer

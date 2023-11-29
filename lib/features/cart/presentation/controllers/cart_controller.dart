@@ -17,14 +17,31 @@ class CartController extends GetxController {
 
   CartController(this._deleteCartUseCase, this._updateCartUseCase, this._getCartUseCase);
 
-  final viewState = ViewStateInfo(state: ViewState.success).obs;
+  final viewState = ViewStateInfo(state: ViewState.loading).obs;
   final totalPrice = 0.0.obs;
   final cart = Cart(cartItems: []).obs;
 
   final useApi = true.obs;
 
   Future<void> onRefresh() async {
-    await _getCart();
+    try {
+      viewState.value = ViewStateInfo(state: ViewState.loading);
+      await _getCart();
+      viewState.value = ViewStateInfo(state: ViewState.success);
+    } catch (e, st) {
+      viewState.value = ViewStateInfo(
+        state: ViewState.failed,
+        message: 'Unable to fetch data, please try again later!',
+        callback: onRefresh,
+      );
+
+      // Log Error
+      AppErrorUtility.logError(ErrorModel(
+        type: ErrorType.presentation,
+        error: e,
+        stackTrace: st,
+      ));
+    }
   }
 
   Future<void> clearCart() async {

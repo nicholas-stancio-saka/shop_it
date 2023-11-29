@@ -21,6 +21,8 @@ class CartController extends GetxController {
   final totalPrice = 0.0.obs;
   final cart = Cart(cartItems: []).obs;
 
+  final useApi = false.obs;
+
   Future<void> onRefresh() async {
     await _getCart();
   }
@@ -30,31 +32,49 @@ class CartController extends GetxController {
   }
 
   void handleOnRemove(CartItem cartItem) {
-    int index = cart.value.cartItems.indexWhere((item) => item.productId == cartItem.productId);
-    if (index != -1) {
-      if (cart.value.cartItems[index].qty > 1) {
-        cart.value.cartItems[index].qty--;
-      } else {
-        cart.value.cartItems.removeAt(index);
+    final Cart newCart = cart.value;
+
+    // Find the cart item in the cart
+    var itemIndex = newCart.cartItems.indexWhere((item) => item.productId == cartItem.productId);
+
+    if (itemIndex != -1) {
+      // Decrement the quantity of the found item
+      newCart.cartItems[itemIndex].qty--;
+
+      // If the quantity is now 0, remove the item from the cart
+      if (newCart.cartItems[itemIndex].qty < 1) {
+        newCart.cartItems.removeAt(itemIndex);
       }
-      cart.refresh();
-      _calculateTotalPrice();
+
+      // Update the local cart
+      _updateCart(newCart);
     }
   }
 
   void handleOnAdd(CartItem cartItem) {
-    int index = cart.value.cartItems.indexWhere((item) => item.productId == cartItem.productId);
-    if (index != -1) {
-      cart.value.cartItems[index].qty++;
-      cart.refresh();
-      _calculateTotalPrice();
+    final Cart newCart = cart.value;
+
+    int itemIndex = newCart.cartItems.indexWhere((item) => item.productId == cartItem.productId);
+
+    if (itemIndex != -1) {
+      // Increment the quantity
+      newCart.cartItems[itemIndex].qty++;
+
+      _updateCart(newCart);
     }
   }
 
   void handleOnDelete(CartItem cartItem) {
-    cart.value.cartItems.removeWhere((item) => item.productId == cartItem.productId);
-    cart.refresh();
-    _calculateTotalPrice();
+    final Cart newCart = cart.value;
+
+    int itemIndex = newCart.cartItems.indexWhere((item) => item.productId == cartItem.productId);
+
+    if (itemIndex != -1) {
+      // Delete
+      newCart.cartItems.removeAt(itemIndex);
+    }
+
+    _updateCart(newCart);
   }
 
   Future<void> _getCart() async {
@@ -62,7 +82,13 @@ class CartController extends GetxController {
   }
 
   Future<void> _updateCart(Cart newCart) async {
+    if (!useApi.value) {
+      _updateLocalCart(newCart);
+      return;
+    }
+
     AppGlobalLoader.showLoading();
+
     try {
       cart.value = await _updateCartUseCase.call(newCart);
     } catch (e, st) {
@@ -76,6 +102,11 @@ class CartController extends GetxController {
     }
 
     AppGlobalLoader.hideLoading();
+  }
+
+  void _updateLocalCart(Cart newCart) {
+    cart.value = newCart;
+    cart.refresh();
   }
 
   void _calculateTotalPrice() {

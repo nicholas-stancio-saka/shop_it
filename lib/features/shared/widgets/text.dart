@@ -23,6 +23,7 @@ class AppTextField extends StatelessWidget {
   final TextAlign textAlign;
   final List<TextInputFormatter>? inputFormatters;
   final Widget? prefix;
+  final Widget? suffix;
 
   const AppTextField({
     this.controller,
@@ -35,6 +36,7 @@ class AppTextField extends StatelessWidget {
     this.enabledBorder,
     this.keyboardType,
     this.suffixIcon,
+    this.suffix,
     this.prefixIcon,
     this.prefix,
     this.isDense,
@@ -66,7 +68,7 @@ class AppTextField extends StatelessWidget {
             floatingLabelAlignment: FloatingLabelAlignment.start,
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
-
+            suffix: suffix,
             prefix: prefix,
             isDense: isDense,
             errorStyle: const TextStyle(height: 0, fontSize: 0), // Hides the error text

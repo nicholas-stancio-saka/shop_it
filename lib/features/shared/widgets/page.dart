@@ -38,17 +38,23 @@ class AppPage extends StatelessWidget {
           appBar: title == null
               ? null
               : AppBar(
-                  leading: GestureDetector(
-                    onTap: () => Get.back(),
-                    child: const Icon(Icons.arrow_back_ios_new),
+                  leading: Container(),
+                  leadingWidth: 0,
+                  title: Stack(
+                    children: [
+                      Center(child: Text(title ?? '')),
+                      Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () => Get.back(),
+                            child: const Icon(Icons.arrow_back_ios_new),
+                          ),
+                          const Spacer(),
+                          ...?actions,
+                        ],
+                      ),
+                    ],
                   ),
-                  title: Text(title ?? ''),
-                  actions: [
-                    ...?actions,
-                    Container(
-                      width: 14, // Add Gap
-                    ),
-                  ],
                 ),
           body: Stack(
             children: [

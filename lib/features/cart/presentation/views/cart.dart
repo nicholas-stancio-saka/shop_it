@@ -34,7 +34,7 @@ class CartScreen extends StatelessWidget {
               children: [
                 Expanded(child: _buildCartContent()),
                 Container(
-                  height: 120, // Space for bottom bar
+                  height: 160, // Space for bottom bar
                 ),
               ],
             ),
@@ -84,6 +84,21 @@ class CartScreen extends StatelessWidget {
       () => Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          Row(
+            children: [
+              Text(
+                'Use API',
+                style: Theme.of(Get.context!).textTheme.titleMedium,
+              ),
+              Container(
+                width: 20,
+              ),
+              Obx(() => Switch(
+                    value: cartController.useApi.value,
+                    onChanged: (value) => cartController.useApi.value = value,
+                  )),
+            ],
+          ),
           Row(
             children: [
               Text(

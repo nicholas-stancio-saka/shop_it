@@ -120,7 +120,7 @@ class ProductDetail extends StatelessWidget {
         height: 50,
         child: AppButton(
           onTap: () {
-            Get.toNamed('cart');
+            productDetailController.addToCart(product);
           },
           child: const Text(
             'Add To Cart',

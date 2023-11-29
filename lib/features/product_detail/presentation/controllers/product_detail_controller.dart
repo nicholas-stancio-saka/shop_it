@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
+import 'package:shop_it/features/product_list/domain/entities/product.dart';
 
 class ProductDetailController extends GetxController {
-  addToCart() {
+  addToCart(Product product) {
     // TODO: Implement This
   }
 

@@ -4,7 +4,7 @@ import 'package:shop_it/core/config/config.dart';
 import 'package:shop_it/core/services/utils/logging.dart';
 
 class AppDio {
-  static const baseUrl = AppConfig.baseUrl;
+  static String baseUrl = AppConfig.baseUrl;
   static const connectTimeout = Duration(seconds: 10); // 10s
 
   static Dio initAppDioInstance() {

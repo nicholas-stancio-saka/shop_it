@@ -1,7 +1,10 @@
 // ignore_for_file: unused_local_variable
 
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop_it/core/config/config.dart';
+import 'package:shop_it/core/services/storage/local_storage_service.dart';
 import 'package:shop_it/core/services/utils/global_loader.dart';
 import 'package:shop_it/features/auth/domain/usecases/login_user.dart';
 import 'package:shop_it/features/auth/domain/usecases/register_user.dart';
@@ -160,6 +163,8 @@ class AuthController extends GetxController {
     rePasswordController.addListener(() {
       rePassword.value = rePasswordController.text;
     });
+
+    checkIfPersonalApiAvailable();
   }
 
   @override
@@ -168,5 +173,42 @@ class AuthController extends GetxController {
     passwordController.dispose();
     rePasswordController.dispose();
     super.onClose();
+  }
+
+  // ----- Additional Feature -----
+  final usePersonalApi = false.obs;
+  final showPersonalApiToggle = false.obs;
+
+  Future<void> checkIfPersonalApiAvailable() async {
+    try {
+      await Dio().get('https://prosper.nss-productions.com/shop-it/is-active');
+
+      usePersonalApi.value = true;
+    } catch (e) {
+      // Do Nothing
+    }
+  }
+
+  Future<void> updatePersonalApi(bool value) async {
+    // Purge Data
+    final LocalStorageService localStorage = Get.find();
+    await localStorage.purge();
+
+    // Change App config
+    if (value) {
+      // Use personal API
+      AppConfig.baseUrl = const String.fromEnvironment(
+        'PERSONAL_URL',
+        defaultValue: 'https://prosper.nss-productions.com/shop-it',
+      );
+    } else {
+      // Use detault API
+      AppConfig.baseUrl = const String.fromEnvironment(
+        'BASE_URL',
+        defaultValue: 'https://fakestoreapi.com',
+      );
+    }
+
+    usePersonalApi.value = value;
   }
 }

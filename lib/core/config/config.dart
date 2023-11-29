@@ -36,7 +36,7 @@ class AppConfig {
           ? AppType.profile
           : AppType.debug;
 
-  static const baseUrl = String.fromEnvironment(
+  static String baseUrl = const String.fromEnvironment(
     'BASE_URL',
     defaultValue: 'https://fakestoreapi.com',
   );

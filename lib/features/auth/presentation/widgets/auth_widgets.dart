@@ -87,48 +87,6 @@ class AuthWidgets {
     );
   }
 
-  // ----- Error handling -----
-  Widget buildErrorMessage() {
-    return Positioned(
-      bottom: 75,
-      left: 0,
-      right: 0,
-      child: Obx(() {
-        if (authController.errorMessage.value != null) {
-          return Text(
-            authController.errorMessage.value!,
-            style: Theme.of(Get.context!).textTheme.titleMedium!.apply(
-                  color: AppTheme.error,
-                ),
-            textAlign: TextAlign.center,
-          );
-        }
-
-        return Container();
-      }),
-    );
-  }
-
-  // ----- Developer Related -----
-  Widget buildAutoFill() {
-    return Positioned(
-      bottom: 20,
-      left: 0,
-      right: 0,
-      child: Center(
-        child: AppButton(
-          onTap: () {
-            // https://fakestoreapi.com/docs
-            authController.emailController.text = 'mor_2314';
-            authController.passwordController.text = '83r5^_';
-            authController.rePasswordController.text = '83r5^_';
-          },
-          child: const Text('Auto Fill'),
-        ),
-      ),
-    );
-  }
-
   // ----- Page specific -----
   Widget buildToResetPassword() {
     return Row(

@@ -11,6 +11,7 @@ Expected End Date: 1 Dec 2023 (3 days)
 - If there are an unknown error, there might be a problem with the api (https://fakestoreapi.com/).
     - Known issue occurance: 29 Nov 16.00 - 21.30
 - User can logout (locally) by pressing the profile icon in the home screen.
+- Buggy API saat delete cart. harusnya return array kosong, tapi ada isi
 
 ## Additional features:
 Firebase Crashlytics --> Error handling on productions
@@ -42,3 +43,5 @@ Firebase Crashlytics --> Error handling on productions
 - There is no search API. so fetch all products and manually search
 - If the products never changes, bisa store local storage to improve performance
 - Bisa dikasih placeholder kalo empty / on init
+
+###

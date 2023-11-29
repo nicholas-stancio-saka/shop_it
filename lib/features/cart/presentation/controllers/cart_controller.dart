@@ -21,18 +21,38 @@ class CartController extends GetxController {
   final totalPrice = 0.0.obs;
   final cart = Cart(cartItems: []).obs;
 
-  final useApi = false.obs;
+  final useApi = true.obs;
 
   Future<void> onRefresh() async {
     await _getCart();
   }
 
   Future<void> clearCart() async {
-    cart.value = await _deleteCartUseCase.call();
+    if (!useApi.value) {
+      _clearLocalCart();
+      return;
+    }
+
+    try {
+      AppGlobalLoader.showLoading();
+
+      cart.value = await _deleteCartUseCase.call();
+      cart.refresh();
+    } catch (e, st) {
+      AppErrorUtility.defaultErrorDialog(
+        ErrorModel(
+          type: ErrorType.presentation,
+          error: e,
+          stackTrace: st,
+        ),
+      );
+    }
+    AppGlobalLoader.hideLoading();
   }
 
   void handleOnRemove(CartItem cartItem) {
-    final Cart newCart = cart.value;
+    final List<CartItem> items = [...cart.value.cartItems];
+    final Cart newCart = Cart(cartItems: items);
 
     // Find the cart item in the cart
     var itemIndex = newCart.cartItems.indexWhere((item) => item.productId == cartItem.productId);
@@ -52,7 +72,8 @@ class CartController extends GetxController {
   }
 
   void handleOnAdd(CartItem cartItem) {
-    final Cart newCart = cart.value;
+    final List<CartItem> items = [...cart.value.cartItems];
+    final Cart newCart = Cart(cartItems: items);
 
     int itemIndex = newCart.cartItems.indexWhere((item) => item.productId == cartItem.productId);
 
@@ -65,7 +86,8 @@ class CartController extends GetxController {
   }
 
   void handleOnDelete(CartItem cartItem) {
-    final Cart newCart = cart.value;
+    final List<CartItem> items = [...cart.value.cartItems];
+    final Cart newCart = Cart(cartItems: items);
 
     int itemIndex = newCart.cartItems.indexWhere((item) => item.productId == cartItem.productId);
 
@@ -106,6 +128,11 @@ class CartController extends GetxController {
 
   void _updateLocalCart(Cart newCart) {
     cart.value = newCart;
+    cart.refresh();
+  }
+
+  void _clearLocalCart() {
+    cart.value = Cart(cartItems: []);
     cart.refresh();
   }
 

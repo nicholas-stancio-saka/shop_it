@@ -29,11 +29,11 @@ class AppRouter {
       ),
       GetPage(
         name: '/search',
-        page: () => const SearchScreen(),
+        page: () => SearchScreen(),
       ),
       GetPage(
         name: '/cart',
-        page: () => const CartScreen(),
+        page: () => CartScreen(),
       ),
     ];
   }

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_it/core/initialization/controllers/init_controller.dart';
 import 'package:shop_it/core/services/network/api/app_api.dart';
@@ -25,6 +24,7 @@ import 'package:shop_it/features/product_list/domain/repositories/product_list_r
 import 'package:shop_it/features/product_list/domain/usecases/category.dart';
 import 'package:shop_it/features/product_list/domain/usecases/product.dart';
 import 'package:shop_it/features/product_list/presentation/controllers/product_list_controller.dart';
+import 'package:shop_it/features/product_search/presentation/controllers/search_controller.dart';
 
 enum DioTokenType { noToken, token }
 
@@ -71,6 +71,6 @@ void initializeAfterAuthDependencies(String token) {
   Get.lazyPut<HomeController>(() => HomeController(Get.find()), fenix: true);
   Get.lazyPut<ProductListController>(() => ProductListController(Get.find(), Get.find()), fenix: true);
   Get.lazyPut<ProductDetailController>(() => ProductDetailController(), fenix: true);
-  Get.lazyPut<SearchController>(() => SearchController(), fenix: true);
+  Get.lazyPut<ProductSearchController>(() => ProductSearchController(), fenix: true);
   Get.lazyPut<CartController>(() => CartController(), fenix: true);
 }

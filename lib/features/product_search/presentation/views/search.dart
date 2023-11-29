@@ -74,7 +74,7 @@ class SearchScreen extends StatelessWidget {
       return ListView.builder(
         itemCount: productSearchController.productList.length,
         itemBuilder: (context, index) {
-          return Container(
+          return SizedBox(
             height: 150,
             child: ProductCard(
               product: productSearchController.productList[index],

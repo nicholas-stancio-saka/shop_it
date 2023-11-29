@@ -18,7 +18,7 @@ class ProductSearchRepositoryImpl implements ProductSearchRepository {
       final GetProductResponse getProductResponse = GetProductResponse.fromJson(element);
 
       // TODO: Need requirements for search logic
-      if (getProductResponse.title.contains(text)) {
+      if (getProductResponse.title.toLowerCase().contains(text.toLowerCase())) {
         productList.add(Product.fromGetProductResponse(getProductResponse));
       }
     }

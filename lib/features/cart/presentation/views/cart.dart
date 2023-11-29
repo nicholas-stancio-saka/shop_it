@@ -95,7 +95,7 @@ class CartScreen extends StatelessWidget {
               ),
               const Spacer(),
               Text(
-                'USD ${cartController.totalPrice.value}',
+                'USD ${cartController.totalPrice.value.toStringAsFixed(2)}',
                 style: Theme.of(Get.context!).textTheme.titleMedium!.copyWith(
                       fontWeight: FontWeight.bold,
                     ),

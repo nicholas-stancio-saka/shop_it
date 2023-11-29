@@ -112,14 +112,19 @@ class CartItemCard extends StatelessWidget {
           ),
         ),
         Container(
-          width: 15,
-        ),
-        Text(
-          cartItem.qty.toString(),
-          style: Theme.of(Get.context!).textTheme.titleMedium,
+          width: 5,
         ),
         Container(
-          width: 15,
+          width: 30,
+          child: Center(
+            child: Text(
+              cartItem.qty.toString(),
+              style: Theme.of(Get.context!).textTheme.titleMedium,
+            ),
+          ),
+        ),
+        Container(
+          width: 5,
         ),
         GestureDetector(
           onTap: handleOnAdd,

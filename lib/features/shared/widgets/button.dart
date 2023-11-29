@@ -8,7 +8,7 @@ class AppButton extends StatelessWidget {
   final double height;
   final double? width;
   final VoidCallback? onTap;
-  final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry? padding;
   final AppButtonType type;
   final double borderRadius;
 

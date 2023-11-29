@@ -38,6 +38,7 @@ Firebase Crashlytics --> Error handling on productions
 - Implement Lazy Load
 - Mungkin category bisa dibuat swipe pake PageView atau yng mirip. Depends on the requirement maunya gimana
 - Image placeholder kalau fail
+- Implement Stream. Stop previous action when a new action is called (Change Category)
 
 ### Product Search
 - There is no search API. so fetch all products and manually search

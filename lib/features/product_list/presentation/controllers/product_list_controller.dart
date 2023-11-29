@@ -26,10 +26,10 @@ class ProductListController extends GetxController {
 
   Future<void> onRefresh() async {
     await _fetchCategories();
-    await updateCategory(selectedCategory);
+    await updateProducts(selectedCategory);
   }
 
-  Future<void> updateCategory(Category newCategory) async {
+  Future<void> updateProducts(Category newCategory) async {
     try {
       viewStateProducts.value = ViewStateInfo(state: ViewState.loading);
 

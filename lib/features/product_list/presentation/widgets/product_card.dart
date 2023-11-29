@@ -70,23 +70,31 @@ class ProductCard extends StatelessWidget {
   }
 
   Widget _buildAlternateCardContent() {
-    return Row(
-      children: [
-        _buildImage(),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                _buildTitlePrice(maxLines: 2),
-                const Spacer(),
-                _buildRatingReview(),
-              ],
+    return LayoutBuilder(builder: (context, constraints) {
+      final cardHeight = constraints.maxHeight;
+
+      return Row(
+        children: [
+          SizedBox(
+            width: cardHeight, // 1 : 1
+            height: cardHeight, // 1 : 1
+            child: _buildImage(),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  _buildTitlePrice(maxLines: 2),
+                  const Spacer(),
+                  _buildRatingReview(),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
-    );
+        ],
+      );
+    });
   }
 
   Widget _buildImage() {

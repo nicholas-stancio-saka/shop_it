@@ -24,6 +24,10 @@ import 'package:shop_it/features/product_list/domain/repositories/product_list_r
 import 'package:shop_it/features/product_list/domain/usecases/category.dart';
 import 'package:shop_it/features/product_list/domain/usecases/product.dart';
 import 'package:shop_it/features/product_list/presentation/controllers/product_list_controller.dart';
+import 'package:shop_it/features/product_search/data/datasources/product_search_remote_data_source.dart';
+import 'package:shop_it/features/product_search/data/repositories/product_search_repository_impl.dart';
+import 'package:shop_it/features/product_search/domain/repositories/product_search_repository_impl.dart';
+import 'package:shop_it/features/product_search/domain/usecases/search.dart';
 import 'package:shop_it/features/product_search/presentation/controllers/search_controller.dart';
 
 enum DioTokenType { noToken, token }
@@ -67,10 +71,15 @@ void initializeAfterAuthDependencies(String token) {
   Get.lazyPut(() => CategoryUseCase(Get.find()), fenix: true);
   Get.lazyPut(() => ProductUseCase(Get.find()), fenix: true);
 
+  // Product Search feature dependencies
+  Get.lazyPut<ProductSearchRemoteDataSource>(() => ProductSearchRemoteDataSource(dioToken), fenix: true);
+  Get.lazyPut<ProductSearchRepository>(() => ProductSearchRepositoryImpl(Get.find()), fenix: true);
+  Get.lazyPut(() => SearchUseCase(Get.find()), fenix: true);
+
   // Controllers
   Get.lazyPut<HomeController>(() => HomeController(Get.find()), fenix: true);
   Get.lazyPut<ProductListController>(() => ProductListController(Get.find(), Get.find()), fenix: true);
   Get.lazyPut<ProductDetailController>(() => ProductDetailController(), fenix: true);
-  Get.lazyPut<ProductSearchController>(() => ProductSearchController(), fenix: true);
+  Get.lazyPut<ProductSearchController>(() => ProductSearchController(Get.find()), fenix: true);
   Get.lazyPut<CartController>(() => CartController(), fenix: true);
 }

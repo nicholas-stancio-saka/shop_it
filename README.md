@@ -35,3 +35,7 @@ Firebase Crashlytics --> Error handling on productions
 - Implement Lazy Load
 - Mungkin category bisa dibuat swipe pake PageView atau yng mirip. Depends on the requirement maunya gimana
 - Image placeholder kalau fail
+
+### Product Search
+- There is no search API. so fetch all products and manually search
+- If the products never changes, bisa store local storage to improve performance

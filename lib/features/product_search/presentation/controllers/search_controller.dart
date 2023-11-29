@@ -3,9 +3,15 @@ import 'package:get/get.dart';
 import 'package:shop_it/core/error/error_model.dart';
 import 'package:shop_it/core/error/error_utility.dart';
 import 'package:shop_it/features/product_list/domain/entities/product.dart';
+import 'package:shop_it/features/product_search/domain/usecases/search.dart';
 import 'package:shop_it/features/shared/entities/view_state.dart';
 
 class ProductSearchController extends GetxController {
+  // Use cases
+  final SearchUseCase _searchUseCase;
+
+  ProductSearchController(this._searchUseCase);
+
   final viewState = ViewStateInfo(state: ViewState.success).obs;
   final productList = <Product>[].obs;
 
@@ -49,7 +55,7 @@ class ProductSearchController extends GetxController {
   }
 
   Future<void> _fetchProducts(String text) async {
-    await Future.delayed(const Duration(seconds: 1));
+    productList.value = await _searchUseCase.call(text);
   }
 
   @override

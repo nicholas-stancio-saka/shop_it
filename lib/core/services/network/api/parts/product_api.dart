@@ -18,4 +18,10 @@ extension ProductApi on AppApi {
 
     return response.data;
   }
+
+  Future<Map<String, dynamic>> getProduct(int productId) async {
+    final response = await dio.get('/products/$productId');
+
+    return response.data;
+  }
 }

@@ -21,6 +21,8 @@ Firebase Crashlytics --> Error handling on productions
 'https://fakestoreapi.com/users/$id' -> Get User (Combine with login)
 
 ## Potential Improvements
+- Centralized product remote data access
+- Caching to reduce network usage
 
 ### Auth
 - Implement Real Auth (Login & Register). Saat ini API gabisa. Tapi code & stuktur udah siap kalau bisa pindah

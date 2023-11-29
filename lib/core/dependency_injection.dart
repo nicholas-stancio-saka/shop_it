@@ -12,6 +12,12 @@ import 'package:shop_it/features/auth/domain/usecases/login_user.dart';
 import 'package:shop_it/features/auth/domain/usecases/register_user.dart';
 import 'package:shop_it/features/auth/domain/usecases/reset_password.dart';
 import 'package:shop_it/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:shop_it/features/cart/data/datasources/cart_remote_data_source.dart';
+import 'package:shop_it/features/cart/data/repositories/cart_repository_impl.dart';
+import 'package:shop_it/features/cart/domain/repositories/cart_repository.dart';
+import 'package:shop_it/features/cart/domain/usecases/delete_cart.dart';
+import 'package:shop_it/features/cart/domain/usecases/get_cart.dart';
+import 'package:shop_it/features/cart/domain/usecases/update_cart.dart';
 import 'package:shop_it/features/cart/presentation/controllers/cart_controller.dart';
 import 'package:shop_it/features/home/data/datasources/home_local_data_source.dart';
 import 'package:shop_it/features/home/data/datasources/home_remote_data_source.dart';
@@ -76,10 +82,17 @@ void initializeAfterAuthDependencies(String token) {
   Get.lazyPut<ProductSearchRepository>(() => ProductSearchRepositoryImpl(Get.find()), fenix: true);
   Get.lazyPut(() => SearchUseCase(Get.find()), fenix: true);
 
+  // Cart feature dependencies
+  Get.lazyPut<CartRemoteDataSource>(() => CartRemoteDataSource(dioToken), fenix: true);
+  Get.lazyPut<CartRepository>(() => CartRepositoryImpl(Get.find()), fenix: true);
+  Get.lazyPut(() => DeleteCartUseCase(Get.find()), fenix: true);
+  Get.lazyPut(() => UpdateCartUseCase(Get.find()), fenix: true);
+  Get.lazyPut(() => GetCartUseCase(Get.find()), fenix: true);
+
   // Controllers
   Get.lazyPut<HomeController>(() => HomeController(Get.find()), fenix: true);
   Get.lazyPut<ProductListController>(() => ProductListController(Get.find(), Get.find()), fenix: true);
   Get.lazyPut<ProductDetailController>(() => ProductDetailController(), fenix: true);
   Get.lazyPut<ProductSearchController>(() => ProductSearchController(Get.find()), fenix: true);
-  Get.lazyPut<CartController>(() => CartController(), fenix: true);
+  Get.lazyPut<CartController>(() => CartController(Get.find(), Get.find(), Get.find()), fenix: true);
 }

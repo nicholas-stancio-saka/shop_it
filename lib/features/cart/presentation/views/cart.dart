@@ -61,9 +61,9 @@ class CartScreen extends StatelessWidget {
       }
 
       return ListView.builder(
-        itemCount: cartController.cartItemList.length,
+        itemCount: cartController.cart.value.cartItems.length,
         itemBuilder: (context, index) {
-          final cartItem = cartController.cartItemList[index];
+          final cartItem = cartController.cart.value.cartItems[index];
 
           return SizedBox(
             height: 150,
@@ -87,7 +87,7 @@ class CartScreen extends StatelessWidget {
           Row(
             children: [
               Text(
-                'Total ${cartController.cartItemList.length} Items',
+                'Total ${cartController.cart.value.cartItems.length} Items',
                 style: Theme.of(Get.context!).textTheme.bodyMedium!.copyWith(
                       color: Colors.black54,
                       fontWeight: FontWeight.w500,

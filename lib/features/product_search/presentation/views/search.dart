@@ -45,6 +45,7 @@ class SearchScreen extends StatelessWidget {
 
   Widget _buildSearchBox() {
     return AppTextField(
+      controller: productSearchController.searchTextController,
       suffixIcon: GestureDetector(
         onTap: () => productSearchController.clear(),
         child: const Icon(Icons.close),

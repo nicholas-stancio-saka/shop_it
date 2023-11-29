@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_it/core/error/error_model.dart';
 import 'package:shop_it/core/error/error_utility.dart';
@@ -7,6 +8,8 @@ import 'package:shop_it/features/shared/entities/view_state.dart';
 class ProductSearchController extends GetxController {
   final viewState = ViewStateInfo(state: ViewState.success).obs;
   final productList = <Product>[].obs;
+
+  final searchTextController = TextEditingController();
   final searchText = ''.obs;
 
   void toCart() {
@@ -14,7 +17,8 @@ class ProductSearchController extends GetxController {
   }
 
   void clear() {
-    searchText.value = '';
+    searchTextController.text = '';
+    updateSearchText('');
   }
 
   void updateSearchText(String newText) {

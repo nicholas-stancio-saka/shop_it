@@ -1,0 +1,425 @@
+commit 16b4eb4ab7f543b2b4d459c09a3b567eb0fc8978
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 18:23:59 2023 +0700
+
+    Add Splashscreen and launcher Icon
+
+commit a67df54109e94c0b4cc7fecfad3a0035b9be4642
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 18:18:36 2023 +0700
+
+    minor update
+
+commit 78e9a93f78b168a9b834e33f749b243fe35bb781
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 18:03:47 2023 +0700
+
+    Add personal API feature
+
+commit 4339196c6a525ea848e9a93ec4876dde9262386c
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 17:48:34 2023 +0700
+
+    clean
+
+commit 2b4c2c92f45055eefeb26b49f8d4119b53e03ad1
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 17:44:44 2023 +0700
+
+    add viewstate
+
+commit 3b9e5b362186f5a889c9c8121dfd46e772d2f2d9
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 17:40:06 2023 +0700
+
+    fix few issues
+
+commit 5bf4b7fb318e56f6261c9c98b684e26b823738c5
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 17:18:06 2023 +0700
+
+    add toggle to use api or no
+
+commit 4f2b9bb53b25256da7189958db51ea6d08dbbf0d
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 17:11:59 2023 +0700
+
+    better logic handling
+
+commit fdef807ccfac8cf1036f276c2ad0b272fd0b0a1c
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 16:55:36 2023 +0700
+
+    beautify UI
+
+commit 891313ca3490723020815658ba7be8bca7089a0f
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 16:53:07 2023 +0700
+
+    Implement cart data domain layer
+
+commit 2540abc70696a324c0b159390befe7adeaecc89d
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 15:29:29 2023 +0700
+
+    Cart Presentation
+
+commit f1454403a33ae6413c4511e1ffa3e2569343d8c0
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 13:42:21 2023 +0700
+
+    Update README
+
+commit c880f987a817b8a6d161a8f159164a3535a0111e
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 13:41:34 2023 +0700
+
+    fix minor issue
+
+commit 7e3fd74a7093cb4b91b5e9600cc0611ed7b2f79b
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 13:39:57 2023 +0700
+
+    fix search issues
+
+commit 1d824eebb262d8af471a8bd32cc562d93d60e8d0
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 13:37:25 2023 +0700
+
+    search data and domain
+
+commit db608ec9c29f2cb974b762f0d3554175e42a5e01
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 13:25:01 2023 +0700
+
+    fix minor issue
+
+commit c5ee7e26c4851a20d71aa51cb5b93361a20c26de
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 13:21:38 2023 +0700
+
+    Search Presentation
+
+commit 5f291df7d0d671461620d54c2b54caab6d8f3c78
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 12:52:57 2023 +0700
+
+    adjust routing
+
+commit 2434fdaafbe7295efdc68f3712e8d41eb1286c90
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 12:49:19 2023 +0700
+
+    Routing handling
+
+commit f2a66ad1122845ed911fed5d533410ef8ef21561
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 12:33:37 2023 +0700
+
+    Better state handling
+
+commit 645bba182845069d5293b61ea32e2b8f67dc39a2
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Wed Nov 29 12:13:23 2023 +0700
+
+    add all category
+
+commit 69fb4b9b104a1ad5cce2e5f8c48fbad3919b3533
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 23:44:54 2023 +0700
+
+    Change category feature
+
+commit 0991694ddc91e270255c2a413cd4a04c7d8e5a1f
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 23:42:37 2023 +0700
+
+    add todo
+
+commit 3c90d2a3307937f4c35c1ba177b9f8b2d915aa1c
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 23:42:15 2023 +0700
+
+    enhance product detail design
+
+commit 1dbdf1ac1ffd5a11a5b143a2fd0d811c1cd5f14d
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 23:41:33 2023 +0700
+
+    enhance product list design
+
+commit f21880e93c41bef2df0a0c28b04198011ee7661a
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 23:37:32 2023 +0700
+
+    Add View State
+
+commit 30e5f251a0f391576ec440acb2ce72e9cd1b5c54
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 23:27:12 2023 +0700
+
+    add data and domain layer on product list
+
+commit 514e6fb53e5a8e37672dc155604ee60a0de6974b
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 22:41:39 2023 +0700
+
+    add new api endpoints
+
+commit 0aca114f1ad279fe4170cc7d95a807c11ff0b920
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 22:09:23 2023 +0700
+
+    Implement Logout Feature
+
+commit 35480cf7ec70426b120e6d96abb6043eeb483b09
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 21:53:57 2023 +0700
+
+    Beautify Product Detail
+
+commit 76c4a2401cba4a1061730414527bee377126f9d9
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 21:37:17 2023 +0700
+
+    Add Product Detail
+
+commit c230129949fa44eff3950a9641458ad869bafa3c
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 21:32:22 2023 +0700
+
+    Add Known API issue occurance
+
+commit 43de52099dcaf673b84cd210be6cf2e52e52e300
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 20:48:32 2023 +0700
+
+    remove unused functions
+
+commit 7dad05e803ab8e3d4c1579f5745fa75114e2ff93
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 20:47:24 2023 +0700
+
+    Adjust ProductCard
+
+commit fcbe61e57da3b4abb15437bc35c0adf61ccb8149
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 20:28:57 2023 +0700
+
+    Add Potential Improvements
+
+commit d2b8aa47ef71d2e6e68a106778da863cae60aad2
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 20:28:49 2023 +0700
+
+    Product List
+
+commit df2ef907b39c37c14c241a4696270f1a44cbcfba
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 19:44:43 2023 +0700
+
+    Tidy techniacl test files
+
+commit fcf27a6d866621be7c4fdfae262dd13aa3d6fe2f
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 17:42:12 2023 +0700
+
+    Home Top Bar
+
+commit b58d11513cce3646f5606f2762d91f481289d682
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 17:25:11 2023 +0700
+
+    Add Temporary Token
+
+commit cd31dbfa0107e9469ed6a4267d4c64edd609bed6
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 17:20:42 2023 +0700
+
+    temporary deactivate ping to server
+
+commit a87941fe6dc2bf8e26e139635f92fa95c3bbf037
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 17:07:23 2023 +0700
+
+    Fix minor issues
+
+commit d234955d7af1e893136696838e6275c538eefa4e
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 16:57:28 2023 +0700
+
+    Fix few UI issues
+
+commit a28e3f0321b6968050e17dc58f3aeb2adf3a90fb
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 16:54:09 2023 +0700
+
+    Adjust routes
+
+commit 1e19df9fcc4751adee6714f1052359544a242358
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 16:52:18 2023 +0700
+
+    Auth UI Screen
+
+commit 07da4bdc8f633918c118d18b2fb2604d770efa89
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 15:30:15 2023 +0700
+
+    Adjust theme and add logo
+
+commit fc9e97e1fd4989000a09f3c547fa5ec86cdb45bb
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 15:12:32 2023 +0700
+
+    Implement Auth API
+
+commit 360b8b2439f298abfed6aaa93e1d075ccd18899b
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:47:24 2023 +0700
+
+    Change model name
+
+commit 8fe6ff6c1d348a1d6b28893aab311c16887a5c8c
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:38:00 2023 +0700
+
+    Adjust API models
+
+commit 2f332ed45565e5612df51295161161d76fd393f4
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:35:42 2023 +0700
+
+    Change File Name
+
+commit e45c59fac2c76b1b55a03c8e346fb5ee85ab589f
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:34:24 2023 +0700
+
+    add new api to get user
+
+commit 3b7861b2f27fe76493941d376182c543c91c12f6
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:31:27 2023 +0700
+
+    Adjust API Models
+
+commit 82f4566dd487565cf98c512bb81e14ab0c7c8ddb
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:24:27 2023 +0700
+
+    Add documentation
+
+commit 2b3d9ea18db6b92e521e57e8e12998a6e6eba1a5
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:19:49 2023 +0700
+
+    move viewstate entitiy to feature
+
+commit 6ab9d0e9e9406eaaa4bcb9ba630eb38e086b5752
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:18:32 2023 +0700
+
+    Adjust AuthApi endpoints
+
+commit 8f8a1663058f270c88fc5ea20034dba0332b79af
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:17:49 2023 +0700
+
+    Adjust ping and secure ping
+
+commit 82a34f50ffd33fb361219c605ab5f5786c3646e3
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:17:31 2023 +0700
+
+    Fix documentation
+
+commit 5d2125618fd271f035de9b38bb23bf3a5471f62e
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:12:05 2023 +0700
+
+    Remove Firebase Auth
+
+commit 0fcc843450c3aad9864e6957fff54fab5bf5f4cc
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:11:12 2023 +0700
+
+    Remove Firestore
+
+commit ea1e937c9761f19fd227d524e8e112d20b999fde
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 14:02:11 2023 +0700
+
+    Add Documentations
+
+commit 2289bdc2b463ff9344eab1b092fa28c5fb3c0d16
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 13:55:16 2023 +0700
+
+    Move File Location
+
+commit 60b2ee50b644f8dc27c7824094ba0786f878aefb
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 13:54:09 2023 +0700
+
+    Change default base URL
+
+commit aa30373c9edda5c12a7e332e218c158103f52169
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 13:53:22 2023 +0700
+
+    Update README File
+
+commit 2f4b8141870ee8eb24c501496b5acbbf869d7e32
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 13:44:39 2023 +0700
+
+    Adjust minSdkVersion to 23
+
+commit e060f07bfea974ded6142e64043d302175d3e25b
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 13:44:20 2023 +0700
+
+    Remove unused dependencies
+
+commit d1aeaa02c923a834e5cb7d46ac722b14278f5f16
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 13:40:18 2023 +0700
+
+    Migrate from sentry to crashlytics
+
+commit 5243e2cc9d94174eeaf79e756ae6508be9de965c
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 13:38:15 2023 +0700
+
+    add mising toJson mapping
+
+commit ba5edf9f83f58e573210eca68a0b71e4c5b6d1f2
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 13:33:00 2023 +0700
+
+    Update README file
+
+commit 10490707ccee806636aed27806176f73bb3d81cd
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 13:30:55 2023 +0700
+
+    Setup New Firebase Project
+
+commit de8f165af7b895abf3f18ddd26f87fe45178d631
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 13:19:03 2023 +0700
+
+    Get template from latest project
+
+commit 451d4fdfdc592a022b1e94f6179b32146b9d4593
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 13:13:50 2023 +0700
+
+    Add test details
+
+commit 5aad1fdb1ffbf335975df8c0b6ecc4aada5f858a
+Author: nicholas-stancio-saka <work.nicholasstancio@gmail.com>
+Date:   Tue Nov 28 13:11:54 2023 +0700
+
+    Flutter init
